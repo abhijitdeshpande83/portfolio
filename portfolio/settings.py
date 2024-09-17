@@ -76,13 +76,22 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.Removedql',
+        'NAME': os.getenv('DB_NAME', 'Removed'),  # Default to 'Removed' if not set
+        'USER': os.getenv('DB_USER', 'Removed'),  # Default to your user
+        'PASSWORD': os.getenv('DB_PASSWORD', 'Removed'),  # Default to your password
+        'HOST': os.getenv('DB_HOST', 'Removed'),  # Default to your host
+        'PORT': os.getenv('DB_PORT', 'Removed'),  # Default to your port
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -119,7 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
