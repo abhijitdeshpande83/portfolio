@@ -1,34 +1,16 @@
-# This file may be used to create an environment using:
-# $ conda create --name <env> --file <this file>
-# platform: osx-64
-argon2-cffi=23.1.0=pypi_0
-argon2-cffi-bindings=21.2.0=pypi_0
-asgiref=3.5.2=py312hca03da5_0
-bcrypt=4.1.2=pypi_0
-bzip2=1.0.8=h620ffc9_4
-ca-certificates=2023.12.12=hca03da5_0
-cffi=1.16.0=pypi_0
-django=4.1=py312hca03da5_0
-django-phonenumber-field=8.0.0=pypi_0
-expat=2.5.0=h313beb8_0
-faker=23.1.0=pypi_0
-libcxx=14.0.6=h848a8c0_0
-libffi=3.4.4=hca03da5_0
-ncurses=6.4=h313beb8_0
-openssl=3.0.13=h1a28f6b_0
-phonenumbers=8.13.43=pypi_0
-pillow=10.3.0=pypi_0
-pip=23.3.1=py312hca03da5_0
-pycparser=2.22=pypi_0
-python=3.12.1=h99e199e_0
-python-dateutil=2.8.2=pypi_0
-readline=8.2=h1a28f6b_0
-setuptools=68.2.2=py312hca03da5_0
-six=1.16.0=pypi_0
-sqlite=3.41.2=h80987f9_0
-sqlparse=0.4.4=py312hca03da5_0
-tk=8.6.12=hb8d0fd4_0
-tzdata=2023d=h04d1e81_0
-wheel=0.41.2=py312hca03da5_0
-xz=5.4.5=h80987f9_0
-zlib=1.2.13=h5a0b063_0
+argon2-cffi==23.1.0
+argon2-cffi-bindings==21.2.0
+asgiref @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/asgiref_1699243823778/work
+bcrypt==4.1.2
+cffi==1.16.0
+Django @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/django_1699253156491/work
+django-phonenumber-field==8.0.0
+Faker==23.1.0
+phonenumbers==8.13.43
+pillow==10.3.0
+pycparser==2.22
+python-dateutil==2.8.2
+setuptools==68.2.2
+six==1.16.0
+sqlparse @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/sqlparse_1699250105010/work
+wheel==0.41.2
