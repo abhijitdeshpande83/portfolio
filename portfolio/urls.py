@@ -21,11 +21,13 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.index, name='index'),
-    path('About Me/',views.experience,name='intro'),
-    path('', include('mysite.urls')),  # Include the app’s URL patterns
-    path('Skills/',views.skills, name='skills'),
+    path('index/',views.index, name='index'),
+    path('about-me/',views.experience,name='intro'),
+    path('skills/',views.skills, name='skills'),
     path('thank/',views.thankyou, name='thankyou'),
     path('download-cv/', views.download_cv, name='download_cv'),
+
+    # Include the app’s URL patterns
+    path('', include('mysite.urls')),  
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
