@@ -28,6 +28,10 @@ urlpatterns = [
     path('download-cv/', views.download_cv, name='download_cv'),
 
     # Include the app’s URL patterns
-    path('', include('mysite.urls')),  
+    path('mysite/', include('mysite.urls')),  
 
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
