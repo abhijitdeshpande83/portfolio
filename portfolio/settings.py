@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-h)3$sady(-m&i=oj5m^hqiq+-_po%3+z^a)l=t&xc&*9-1cx=m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1','.vercel.app']
 
 
 # Application definition
@@ -82,12 +82,13 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('DB_NAME', 'postgres'),  # Default to 'postgres' if not set
         'USER': os.getenv('DB_USER', 'postgres.umadbifuskcqkktznodo'),  # Default to your user
-        'PASSWORD': os.getenv('DB_PASSWORD', 'Abhi@79388855'),  # Default to your password
+        'PASSWORD': os.getenv('DB_PASSWORD', 'Abhi79388855'),  # Default to your password
         'HOST': os.getenv('DB_HOST', 'aws-0-us-west-1.pooler.supabase.com'),  # Default to your host
         'PORT': os.getenv('DB_PORT', '6543'),  # Default to your port
     }

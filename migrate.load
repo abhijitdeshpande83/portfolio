@@ -1,0 +1,7 @@
+LOAD DATABASE
+     FROM sqlite:///Users/abhijitdeshpande/Documents/Portfolio/portfolio/db.sqlite3
+     INTO postgresql://postgres.umadbifuskcqkktznodo:Abhi79388855@aws-0-us-west-1.pooler.supabase.com:6543/postgres
+
+  SET work_mem TO '16MB';
+
+-- Include all tables from the SQLite database
