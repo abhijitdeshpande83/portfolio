@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}home{% endblock %}
+{% load static %}
+{% block style %}
+
+{% endblock %}
+
+    {% block body %}
+    <!-- <video class="video-background" autoplay muted loop>
+        <source src="https://cdn.pixabay.com/video/2023/08/10/175446-853577055_large.mp4" type="video/mp4">
+    </video> -->
+      <div class="container-index">
+        <div class="info">
+            <div class="personal-info">
+                <div class="hello">Hi I am</div>
+                <div class="name">Abhijit Deshpande</div>
+                <div class="about">Sr. Business Analyst, AWS Certified, Tableau Specialist</div>
+                <div class="more-about">Driven by curiosity, I continuously seek out opportunities to grow both professionally and personally.</div>
+                <div class="buttons">
+                    <button class="download-button" onclick="window.location.href='{% url 'download_cv' %}'">Download CV</button>
+                </div>
+            </div>
+            <div class="personal-pic">
+                <img src="media/connectme/profile.png" alt="Abhijit Deshpande">
+            </div>
+        </div>
+    </div>
+      {% endblock %}

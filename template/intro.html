@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% load static %}
+{% block style %}
+/* styles.css */
+
+.container-intro {
+    background-color: transparent; /* Ensure the container does not cover the gradient */
+    margin: auto 50px auto 70px;
+    padding: 20px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding in width */
+    width: 90%; /* Set a fixed width */
+    max-heigth: 100vh;
+    overflow: auto; /* Ensure content overflow is handled (scrollbars will appear if necessary) */
+}
+
+.container-intro h1, h3, h4 {
+    color: #FFFFFF; /* White text for contrast */
+}
+
+.container-intro h5 {
+    color: #FFFFFF; 
+    text-align: justify;
+}
+.container-intro li {
+    color: #F5F5F5; /* Light gray text for list items for readability */
+}
+
+{% endblock %}
+
+{% block body %}
+<div class="container-intro">
+    <h1>Experience</h1>
+    <ul>
+        {% for i in experience %}
+            <h4>{{ i.company_name }}</h4>
+            <h5>{{ i.company_experience|safe }}</h5>
+            <br></br>
+        {% endfor %}
+        </ul>
+    <!-- <h4>Flagstar Bank</h4>
+    <ul>
+        <li>Optimized Outbound Wire Transfer Processing: Successfully enhanced outbound wire transfer processing time, 
+            reducing it to under 20 seconds. Focused on identifying and addressing key processing bottlenecks, which 
+            significantly elevated the company's standing as a leader in rapid fund transfers. This optimization not 
+            only improved operational efficiency but also contributed to higher customer satisfaction by ensuring faster 
+            transaction completions.</li>
+        <li>Developed Power BI Dashboards: Led the creation and implementation of advanced Power BI dashboards to 
+            simplify and integrate complex Straight-Through Processing (STP) wire processing reports. This initiative 
+            provided clear, actionable insights and reduced reliance on external reporting sources. The dashboards 
+            enabled more accurate and timely decision-making, enhancing overall business visibility and efficiency 
+            in monitoring wire transfer operations.</li>
+        <li>Data Migration and Analytics Projects: Directed multiple data migration and analytics projects, ensuring 
+            accurate and seamless transfer of data between systems. Utilized advanced analytics techniques to generate 
+            actionable insights, which informed strategic business decisions. This work involved careful planning and 
+            execution to maintain data integrity and support the company's strategic objectives..</li>
+        <li>ISO 20022 Upgrade Implementation: Led the transition from the legacy FAIM format to the ISO 20022 standard 
+            for the payments system. This upgrade involved managing the migration process in compliance with international 
+            banking standards and industry regulations. Successfully facilitated a smooth transition to the new platform, 
+            ensuring compatibility with global standards and enhancing the bank’s ability to handle international 
+            transactions effectively.</li>
+    </ul>
+    <h4>Technology Credit Union</h4>
+    <ul>
+        <li>Developed Conversion Strategy Model: Spearheaded the creation of a comprehensive conversion strategy model 
+            aimed at optimizing customer targeting and recommending actionable next steps. This model was instrumental 
+            in identifying high-conversion leads, resulting in a notable 20% increase in monthly account openings. 
+            Additionally, it contributed to a fivefold increase in customer engagement by effectively targeting and converting 
+            potential leads into active accounts.</li>
+        <li>Created and Deployed Retention Model: Designed and implemented an advanced Retention Model using Python and 
+            AWS SageMaker. This model achieved approximately 50% recall in predicting customer churn, enabling the organization 
+            to proactively address potential issues and implement strategic retention interventions. The successful deployment 
+            of this model facilitated the strengthening of customer relationships and reduced overall churn rates.</li>
+        <li>Enhanced Automation with Python and SQL: Utilized Python and SQL to significantly enhance automation processes 
+            within the organization. Developed and optimized scripts and queries that streamlined data handling and processing 
+            tasks, resulting in increased operational efficiency. These improvements led to the delivery of high-value data 
+            products and insights, supporting data-driven decision-making and strategic planning.</li>
+        <li>Cross-Functional Collaboration: Acted as the key liaison for the Data Analytics department, collaborating with 
+            various cross-functional teams to drive initiatives aimed at boosting efficiency and enhancing automation. 
+            This role involved working closely with stakeholders from different departments to identify needs, address 
+            challenges, and deliver solutions that maximized value and supported organizational goals.</li>
+    </ul>
+    <h4>University of Texas Arlington</h4>
+    <ul>
+        <li>Engineered Advanced LSTM Transformer Encoder Architecture: Developed a cutting-edge attention-based Long Short-Term Memory 
+            (LSTM) transformer encoder architecture tailored for forecasting financial market signals. This innovative model led to a 
+            substantial 20% improvement in forecasting accuracy by better capturing temporal dependencies and market trends. 
+            Additionally, the model's precision reduced false positives by 25%, enhancing the reliability of market predictions 
+            and decision-making processes.</li>
+        <li>Discovered Data Sampling Strategy: Identified and implemented an advanced data sampling strategy that utilized dollar 
+            volume observations combined with event-based sampling. This novel approach resulted in a 30% increase in model
+            accuracy by ensuring that the training data was more representative of real-world market conditions and events. 
+            The improved sampling method helped in capturing critical market signals more effectively and enhancing the overall 
+            performance of predictive models.</li>
+        <li>Enhanced Triple Barrier Methodology: Advanced the path-based Triple Barrier methodology by integrating additional 
+            horizontal barriers for profit-taking and stop-loss limits, and a vertical barrier to define optimal trading positions. 
+            This enhancement allowed for more precise and dynamic risk management and profit maximization strategies, ultimately 
+            improving the robustness and effectiveness of trading strategies.</li>
+        <li>Developed and Deployed Neural Network Architecture: Led the development and deployment of a state-of-the-art neural 
+            network architecture using PyTorch, which included leveraging Optuna's Bayesian optimization for hyperparameter tuning. 
+            This approach resulted in a remarkable 60% reduction in training time and a 30% increase in prediction accuracy. 
+            The optimization techniques employed not only streamlined the training process but also significantly enhanced the 
+            model's performance, surpassing initial expectations and contributing to more accurate and efficient financial forecasting.</li>
+    </ul> -->
+</div>
+{% endblock %}

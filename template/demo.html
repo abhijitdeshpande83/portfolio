@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %}Demo{% endblock %}
+{% load static %}
+{% block style %}
+body {
+    background-image: linear-gradient(to top right, #8B5CF6, #EC4899);
+    min-height: 100vh;
+    margin: 0;
+    display: block; 
+    font-family: monospace;
+}
+.slider{
+    position: relative;
+    width: 100%;
+    height: 370px;
+    overflow: hidden;
+}
+.item{
+    position: absolute;
+    width: 240px;
+    height: 280px;
+    text-align: justify;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.5s;
+    left: calc(50% - 110px);
+    top: 0;
+}
+#next, #prev{
+    position: absolute;
+    top: 40%;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    font-size: xxx-large;
+    font-family: monospace;
+    font-weight: bold;
+    left: 400px;
+}
+#next{
+    left: unset;
+    right: 400px;
+}
+h5{
+    margin: 5px 0; 
+    text-align: center;
+    height: auto;
+}
+{% endblock %}
+{% block body %}        
+        <div class="slider">
+            <div class="item">
+                <img src="/media/AWS-Certified-Cloud-Practitioner_badg.png" class="card-img-top" alt="...">
+                <h5>AWS Cloud Practitioner</h5>
+            </div>
+            <div class="item">
+                <img src="/media/Tableau Desktop Specialist.png" class="card-img-top" alt="...">
+                <h5>Tableau Desktop Certified</h5>
+            </div>
+            <div class="item">
+                <img src="/media/Stanford_online.png" class="card-img-top" alt="...">
+                <h5>Machine Learning</h5>
+            </div>
+            <div class="item">
+                <img src="/media/deep_learning_spec.png"class="card-img-top" alt="...">
+                <h5>Deep Learning Specilization</h5>
+            </div>
+            <div class="item">
+                <img src="/media/SLPython.png"class="card-img-top" alt="...">
+                <h5>Python Core</h5>
+            </div>
+        
+            <button id="next">&#9654;</button>
+            <button id="prev">&#9664;</button>
+        </div>
+    
+        <script src="{% static 'demo.js' %}"></script>
+{% endblock %}
+
