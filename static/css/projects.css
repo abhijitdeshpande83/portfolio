@@ -1,0 +1,11 @@
+.project {
+    /* background-color: brown; */
+    justify-content: center;
+    align-items: center;
+    margin: 15% auto ;
+}
+
+
+.project h1 {
+    text-align: center;
+}
