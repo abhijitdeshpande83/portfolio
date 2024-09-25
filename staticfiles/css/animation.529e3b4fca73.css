@@ -1,0 +1,66 @@
+/* Typing effect */
+.typing {
+    display: flex;
+    font-family: monospace; /* Monospace font for classic typing effect */
+    white-space: nowrap; /* Ensure no wrapping */
+    animation: typing 1s steps(30, end) forwards; /* Typing effect without cursor */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    overflow: hidden; /* Ensure no horizontal scroll */
+    width: 100%; /* Ensure full width of the parent container */
+}
+
+/* Keyframes for typing effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; } /* Ensure this matches the container width */
+}
+
+/* Visibility control */
+.hidden {
+    opacity: 0;
+    visibility: hidden; /* Ensure items are not visible */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade out */
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible; /* Ensure items are visible */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade in */
+}
+
+/* Container styling */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    gap: .3em; /* Space between lists if needed */
+    padding: 0; /* Ensure no extra padding */
+    margin: 0; /* Ensure no extra margin */
+    width: 100%; /* Ensure full width */
+}
+
+/* List item styling */
+.content-certificates li, .content-tools li {
+    position: relative;
+    overflow: hidden; /* Hide overflow to avoid scroll bars */
+    height: auto; /* Auto height based on content */
+    padding-left: 2em; /* Increased space for custom bullets */
+    margin-bottom: -.5em; /* Space between items */
+    width: 100%; /* Ensure container takes full width available */
+}
+
+/* Add custom bullets */
+.content-certificates li::before, .content-tools li::before {
+    content: '•'; /* Unicode character for bullet */
+    position: absolute;
+    left: 0.5em; /* Adjust this value to move bullets away from the text */
+    color: #FFFFFF; /* Bullet color */
+    font-size: 1.2em; /* Bullet size */
+    top: 50%; /* Center bullet vertically */
+    transform: translateY(-50%); /* Adjust vertical centering */
+}
+
+/* Hover effect for the link */
+.verification_link:hover {
+    cursor: pointer; /* Show a pointer cursor on hover */
+    transform: scale(1.03); /* Slightly enlarge the element */
+}

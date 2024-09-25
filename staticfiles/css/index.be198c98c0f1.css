@@ -1,0 +1,63 @@
+.container-index {
+    display: flex;
+    /* background-color: green; */
+    flex-direction: column;
+    padding: 80px 120px; 
+    color: white;
+}
+.info {
+    display: flex;
+    color: rgb(186, 178, 167);
+    justify-content: space-around;
+}
+
+.personal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    width: 50vw;
+    /* background-color: red; */
+}
+
+.personal-pic {
+    display: flex;
+    width: 30vw; 
+    /* background-color: blue; */
+}
+
+.personal-pic img{
+    width: 350px;
+}
+
+.hello {
+    font-size: 40px;
+}
+
+.name {
+    font-size: 35px;
+    font-weight: bold;
+
+}
+
+.about {
+    font-size: 20px;
+}
+.more-about {
+    font-size: 15px;
+}
+
+.buttons button {
+    position: relative;
+    margin-top: 15px;
+    padding: 10px 10px;
+    font-size: 14px;
+    background-color: #007bff;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: white;
+    color: #007bff;
+}
