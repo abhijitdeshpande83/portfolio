@@ -14,9 +14,8 @@ def index(request):
 def intro(request):
     return render(request, 'about.html')
 
-def tools(request):
-    return render(request, 'tools.html')
-
+def project(request):
+    return render(request, 'projects.html')
 
 def contact_me(request):
     return render(request, 'contact_me.html')
@@ -52,3 +51,5 @@ def experience(request):
 def download_cv(request):
     return FileResponse(open('media/cv/Resume.docx', 'rb'), as_attachment=True, filename='Resume.docx')
 
+# def tools(request):
+#     return render(request, 'tools.html')

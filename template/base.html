@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{% static '/css/base.css' %}">
     <link rel="stylesheet" href="{% static '/css/contact_me.css' %}">
     <link rel="stylesheet" href="{% static '/css/about.css' %}">
-
+    <link rel="stylesheet" href="{% static '/css/projects.css' %}">
 
     <!-- Inline CSS -->        
   <style>
@@ -43,7 +43,7 @@
                         <a class="nav-link" aria-current="true" href="{% url 'skills' %}">Skills</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Projects</a>
+                      <a class="nav-link" href="{% url 'project' %}">Projects</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" aria-current="true" href="{% url 'contact_me' %}">Contact Me</a>
