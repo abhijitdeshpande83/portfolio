@@ -6,23 +6,53 @@
 {% endblock %}
 
 {% block body %}
-<div class="container">
+<div class="flex-container">
     <div class="container-skills">
         <div class="content-container">
-            <ul class="content-certificates">
-                {% for i in certificate %}
-                <li class="typing-container hidden">
-                    <div class="typing">{{ i.certification_name }}</div>
-                </li>
-                {% endfor %}
-            </ul>
-            <ul class="content-tools">
-                {% for i in tool %}
-                <li class="typing-container hidden">
-                    <div class="typing">{{ i.tool_name }}</div>
-                </li>
-                {% endfor %}
-            </ul>
+            <div class="rows">
+                <div class="columns">
+                    <h3><img src="/media/skills/AI_w.png" alt="Data Science & Deep Learning">Data Science & Deep Learning</h3>
+                    <h4>My work involves utilizing data analysis and deep learning techniques to extract insights and solve 
+                        complex problems. By leveraging frameworks such as TensorFlow and Keras, I build and train models 
+                        that drive data-informed strategies.</h4>
+                </div>
+                <div class="columns">
+                    <h3><img src="/media/skills/code_w.png" alt="Software Development">Software Development</h3>
+                    <h4>I have experience developing backend applications using Python and Django, creating robust and 
+                        scalable web services. My focus on clean code and best practices ensures that the applications 
+                        are maintainable and efficient, supporting various project needs.</h4>
+                </div>
+            </div>
+            <div class="rows">
+                    <div class="columns">
+                        <h3><img src="/media/skills/adaptation_w.png" alt="Adaptability">Adaptability</h3>
+                        <h4>I excel in rapidly evolving environments, quickly learning new tools and technologies. 
+                            My ability to adapt ensures that I remain at the forefront of industry trends, effectively 
+                            integrating innovative methodologies into my projects.</h4>
+                    </div>
+                    <div class="columns">
+                        <h3><img src="/media/skills/cloud_w.png" alt="Cloud">Cloud Computing</h3>
+                        <h4>I have hands-on experience with AWS, holding certifications in AWS Cloud Foundations and 
+                            Solutions Architect. My expertise enables me to design and deploy scalable, secure 
+                            applications in the cloud, optimizing resource management and enhancing project efficiency.</h4>
+                    </div>
+            </div>
+            <div class="rows">
+                    <div class="columns">
+                        <h3><img src="/media/skills/statistics_w.png" alt="Statistics">Statistics</h3>
+                        <h4>I use Python and SAS for statistical modeling, applying techniques such as 
+                            regression analysis, time series forecasting, and hypothesis testing. This 
+                            expertise allows me to interpret complex datasets and provide actionable 
+                            insights that influence decision-making.</h4>
+                    </div>
+                    <div class="columns">
+                        <h3><img src="/media/skills/visualization_w.png" alt="Visualization">Visualization</h3>
+                        <h4>I leverage Tableau for data visualization, creating interactive dashboards 
+                            and reports that transform complex datasets into clear, actionable insights. 
+                            This expertise enables me to effectively communicate findings to stakeholders, 
+                            facilitating data-driven decision-making.</h4>
+                    </div>
+            </div>
         </div>
 
         <div class="slider-container">

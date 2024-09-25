@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}About{% endblock %}
+{% load static %}
+{% block style %}
+{% endblock %}
+{% block body %}
+<div class="work-experience"> 
+    <div class="work">
+        <h1>Work Experience</h1>
+    {% for i in experience %}
+    <div class="container-work">
+        <img src="/media/experience/work.png">
+        <div class="experience">
+            <h2>{{ i.company_name }}</h2>
+            <h3>{{ i.role }}</h3>
+                {% if i.timeline %}
+                     <small>{{ i.timeline }}</small> 
+                {% endif %}           
+            <p>{{ i.company_experience|safe }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div> 
+    <div class="education">
+        <h1>Education</h1>
+    <div class="container-education">
+        <img src="/media/experience/education.png">
+        <div class="graduation">
+            <h2>University of Texas Arlington</h2>
+            <small>Master of Science in Industrial Engineering</small><br>
+            <small>Jan 2020 - May 2022</small>
+        </div>
+    </div>
+    <div class="container-education">
+        <img src="/media/experience/education.png">
+        <div class="graduation">
+            <h2>Shivaji University</h2>        
+            <small>Bachelor of Engineering</small><br>
+            <small>Aug 2014 - May 2018</small>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
