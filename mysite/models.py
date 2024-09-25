@@ -40,6 +40,8 @@ class Experience(models.Model):
     company_id = models.AutoField(primary_key=True)
     company_name = models.CharField(max_length=50, default='')
     company_experience = models.TextField(default='',blank=True)
+    timeline = models.CharField(max_length=20, default='', blank=True)
+    role = models.CharField(max_length=50, default='')
 
     def __str__(self):
         return self.company_name

@@ -12,7 +12,7 @@ def index(request):
     return render(request,'index.html')
 
 def intro(request):
-    return render(request, 'intro.html')
+    return render(request, 'about.html')
 
 def tools(request):
     return render(request, 'tools.html')
@@ -47,7 +47,7 @@ class ContactFormView(FormView):
 def experience(request):
     experiences = Experience.objects.all()
     params = {'experience':experiences}
-    return render(request, 'intro.html', params)
+    return render(request, 'about.html', params)
 
 def download_cv(request):
     return FileResponse(open('media/cv/Resume.docx', 'rb'), as_attachment=True, filename='Resume.docx')

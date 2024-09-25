@@ -1,69 +1,36 @@
 /* General styles */
-.flex-container {
+.container {
     display: flex;
     flex-direction: column;
-    margin: 0;
+    justify-content: center;
     padding: 0px 100px;
     box-sizing: border-box;
-    width: 100%;
+    width: 120%;
     overflow: hidden;
-    /* background-color: white; */
+    /* background-color: red; */
 }
 .container-skills {
     display: flex;
     /* background-color: green; */
     justify-content: space-around;
-    align-items: center;
+
 }
 .content-container {
     display: flex;
     flex-direction: column;
-    width:fit-content;
-    /* background-color: red; */
     justify-content: center;
-    align-items: center;
-}
-.rows {
-    display: flex;
-    /* background-color: yellow; */
-    justify-content: space-around;
-}
-
-h3 img {
-    width: 25px;
-    height: 25px;
-    margin-right: 5px;
-}
-
-.columns h3 {
-    font-size: 15px;
-    font-weight: bold;
-    color: #fff;
-}
-.columns h4 {
-    font-size: 14px;
-    color: #fff;
-    margin-left: 25px;
-}
-.columns {
-    flex: 1;
-    padding: 10px;
-    margin: 10px 10px 10px 10px;
-    width: 350px;
-    height: 200px;
-    /* border-bottom: 1px solid #eee; */
-    /* background-color: blue; */
-    border-radius: 10px;
+    align-items: start;
+    /* background-color: grey; */
 }
 
 .slider-container {
     display: flex;
-    /* background-color: purple; */
+    /* background-color: yellow; */
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 100vh;
     gap: 1px; /* gap between two cards */
+    padding: 10px; 
 }
 
 .slider {
@@ -77,9 +44,6 @@ h3 img {
     margin-bottom: 15px; 
 }
 
-.slider-title h4 {
-    color: #fff;
-}
 .items-container {
     display: flex;
     position: relative;

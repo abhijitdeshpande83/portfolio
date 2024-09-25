@@ -29,7 +29,6 @@ urlpatterns = [
 
     # Include the app’s URL patterns
     path('mysite/', include('mysite.urls')),  
-
 ]
 
 if settings.DEBUG:
