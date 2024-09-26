@@ -59,12 +59,12 @@
 
 .contact-form-container {
     flex: 1; 
-    max-width: 510px;
-    max-height: 610px;
+    max-width: 450px;
+    max-height: 550px;
     position: relative;
     overflow: auto;
-    margin: auto 150px auto auto;
-    padding: 20px;
+    margin: 20px 200px auto auto;
+    padding: 10px;
     padding-bottom: 5px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -89,7 +89,7 @@
     position: relative; /* Position the button absolutely within the container */
     bottom: -10px; /* Distance from the bottom of the container */
     left: auto;
-    background-color: #007bff;
+    background-color: green;
     color: white;
     border: none;
     border-radius: 4px;
