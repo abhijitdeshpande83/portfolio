@@ -12,6 +12,6 @@ class ContactForm(forms.ModelForm):
             'last_name':forms.TextInput(attrs={'class':'form-control'}),
             'email':forms.EmailInput(attrs={'class':'form-control'}),
             'contact_number':forms.TextInput(attrs={'class':'form-control'}),
-            'message':forms.Textarea(attrs={'class':'form-control','rows': 6}),
+            'message':forms.Textarea(attrs={'class':'form-control','rows': 3}),
 
         }
