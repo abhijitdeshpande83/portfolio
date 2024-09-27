@@ -82,14 +82,6 @@ class ContactFormView(FormView):
                 fail_silently=False,
                 html_message=message  # This parameter allows HTML content
             )
-            # Send email
-            send_mail(
-                subject,
-                message,
-                settings.EMAIL_HOST_USER,  # Your email
-                [user_email],  # Recipient email
-                fail_silently=False,
-            )
             return super().form_valid(form)
         else:
             # Print or log form errors
