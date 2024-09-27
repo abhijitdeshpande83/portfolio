@@ -3,6 +3,7 @@ from django.http import HttpResponse, FileResponse
 from .models import Certification, Tool, Experience
 from django.urls import reverse_lazy
 from django.core.mail import send_mail
+from django.conf import settings
 from django.views.generic.edit import FormView
 from .forms import ContactForm
 import os
