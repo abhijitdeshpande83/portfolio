@@ -52,12 +52,12 @@
     margin-top: 15px;
     padding: 10px 10px;
     font-size: 14px;
-    background-color: #007bff;
+    background-color: green;
     border-radius: 15px;
     transition: background-color 0.3s ease;
 }
 
 .buttons button:hover {
     background-color: white;
-    color: #007bff;
+    color: green;
 }
