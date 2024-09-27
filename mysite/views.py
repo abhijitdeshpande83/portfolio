@@ -43,32 +43,42 @@ class ContactFormView(FormView):
             # Get the user's email
             user_email = form.cleaned_data['email']
             user_first_name = form.cleaned_data['first_name']
+            user_last_name = form.cleaned_data['last_name']
+            full_name = f"{user_first_name} {user_last_name}"
             
             # Prepare email content
-            subject = 'Confirmation of Your Submission'
+            subject = "Submission Successful"
             message = f"""
-            Dear {user_first_name},
+            <p>Dear {full_name},</p>
 
-            Thank you for contacting us! We are pleased to inform you that we have successfully received your submission.
+            <p>Thank you for contacting us! We are pleased to inform you that we have successfully received your submission.</p>
 
-            **Submission Details:**
-            - **Name:** {user_first_name} {form.cleaned_data['last_name']}
-            - **Email:** {form.cleaned_data['email']}
-            - **Contact Number:** {form.cleaned_data['contact_number']}
-            - **Message:** 
-            {form.cleaned_data['message']}
+            <h3>Submission Details:</h3>
+            <ul>
+                <li><strong>Name:</strong> {user_first_name} {form.cleaned_data['last_name']}</li>
+                <li><strong>Email:</strong> {form.cleaned_data['email']}</li>
+                <li><strong>Contact Number:</strong> {form.cleaned_data['contact_number']}</li>
+                <li><strong>Message:</strong> {form.cleaned_data['message']}</li>
+            </ul>
 
-            Your inquiry is important to us, and our team will review your submission and respond to you as soon as possible. We strive to provide timely support and appreciate your patience in this matter.
+            <p>Your inquiry is important to us, and our team will review your submission and respond to you as soon as possible. We strive to provide timely support and appreciate your patience in this matter.</p>
 
-            If you have any further questions or need immediate assistance, please feel free to reply to this email.
+            <p>If you have any further questions or need immediate assistance, please feel free to reply to this email.</p>
 
-            Best regards,
-
-            [Your Company Name]  
-            [Your Company Website]  
-            [Your Company Phone Number]  
+            <p>Best regards,<br>
+            Abhijit Deshpande<br>
+            <a href="https://www.linkedin.com/in/abhijit-deshpande/">LinkedIn Profile</a><br>
+            +1 817-271-2819</p>
             """
 
+            send_mail(
+                subject,
+                message,
+                settings.EMAIL_HOST_USER,  # Your email
+                [form.cleaned_data['email']],  # Recipient email
+                fail_silently=False,
+                html_message=message  # This parameter allows HTML content
+            )
             # Send email
             send_mail(
                 subject,
