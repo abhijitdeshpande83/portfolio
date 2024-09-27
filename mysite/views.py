@@ -51,7 +51,8 @@ class ContactFormView(FormView):
             message = f"""
             <p>Dear {full_name},</p>
 
-            <p>Thank you for contacting us! We are pleased to inform you that we have successfully received your submission.</p>
+            <p>I appreciate you taking the time to share your thoughts with me, and I’m happy to confirm that 
+            I have received your feedback.</p>
 
             <h3>Submission Details:</h3>
             <ul>
@@ -61,14 +62,16 @@ class ContactFormView(FormView):
                 <li><strong>Message:</strong> {form.cleaned_data['message']}</li>
             </ul>
 
-            <p>Your inquiry is important to us, and our team will review your submission and respond to you as soon as possible. We strive to provide timely support and appreciate your patience in this matter.</p>
+            <p>Your feedback is incredibly important to me, and I genuinely value your insights regarding my work. I am eager 
+            to hear your thoughts and suggestions, as they will help me improve and grow.</p>
 
-            <p>If you have any further questions or need immediate assistance, please feel free to reply to this email.</p>
+            <p>If you have any further comments or questions, please don't hesitate to reach out. 
+            I truly appreciate your time and support in this process.</p>
 
-            <p>Best regards,<br>
-            Abhijit Deshpande<br>
-            <a href="https://www.linkedin.com/in/abhijit-deshpande/">LinkedIn Profile</a><br>
-            +1 817-271-2819</p>
+            <p><em>Best regards,</em><br>
+            <em>Abhijit Deshpande</em><br>
+            <a href="https://www.linkedin.com/in/abhijit-deshpande/">LinkedIn</a><br>
+            <em>+1 817-271-2819</em></p>
             """
 
             send_mail(
