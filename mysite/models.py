@@ -25,7 +25,7 @@ class Contact(models.Model):
     last_name =  models.CharField(max_length=15, default='', blank=True,)
     email = models.EmailField(max_length=30)
     contact_number = PhoneNumberField(blank=True, null=True)
-    message = models.TextField(max_length=300,blank=True)
+    message = models.TextField(max_length=2500,blank=True)
     timestamp = models.DateTimeField(auto_now_add=True) 
 
 
