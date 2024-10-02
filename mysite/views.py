@@ -47,7 +47,7 @@ class ContactFormView(FormView):
             full_name = f"{user_first_name} {user_last_name}"
             
             # Prepare email content
-            subject = "Submission Successful"
+            subject = "Submission Successful 🙂"
             message = f"""
             <p>Dear {full_name},</p>
 
@@ -56,8 +56,8 @@ class ContactFormView(FormView):
 
             <h3>Submission Details:</h3>
             <ul>
-                <li><strong>Name:</strong> {user_first_name} {form.cleaned_data['last_name']}</li>
-                <li><strong>Email:</strong> {form.cleaned_data['email']}</li>
+                <li><strong>Name:</strong> {full_name}</li>
+                <li><strong>Email:</strong> {user_email}</li>
                 <li><strong>Contact Number:</strong> {form.cleaned_data['contact_number']}</li>
                 <li><strong>Message:</strong> {form.cleaned_data['message']}</li>
             </ul>
@@ -78,7 +78,7 @@ class ContactFormView(FormView):
                 subject,
                 message,
                 settings.EMAIL_HOST_USER,  # Your email
-                [form.cleaned_data['email']],  # Recipient email
+                [user_email],  # Recipient email
                 fail_silently=False,
                 html_message=message  # This parameter allows HTML content
             )

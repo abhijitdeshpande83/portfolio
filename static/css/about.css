@@ -104,3 +104,6 @@ h1 {
     margin-left: 20px;
 }
 
+.container-work .experience p {
+    color: rgba(148,162,184,255);
+}
