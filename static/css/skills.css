@@ -128,6 +128,10 @@ h5 {
     color: black;
 }
 
+.rows h4 {
+    color: rgb(186, 178, 167);
+}
+
 .content-certificates, .content-tools {
     font-size: 1.3em; /* Increase font size */
     margin-bottom: 10px; /* Add space between the sections */
