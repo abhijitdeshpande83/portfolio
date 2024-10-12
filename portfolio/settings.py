@@ -100,8 +100,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'abhijitdeshpande83@gmail.com')  # Replace with your Gmail address
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'ypsu eiip fyah yvjq')  # Replace with your email password or app password
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'analyticnerds@gmail.com')  # Replace with your Gmail address
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'ighj uesc bxzr ftuv')  # Replace with your email password or app password
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 

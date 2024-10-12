@@ -23,7 +23,7 @@ class Tool(models.Model):
 class Contact(models.Model):
     first_name = models.CharField(max_length=15, default='')
     last_name =  models.CharField(max_length=15, default='', blank=True,)
-    email = models.EmailField(max_length=30)
+    email = models.EmailField(max_length=50)
     contact_number = PhoneNumberField(blank=True, null=True)
     message = models.TextField(max_length=2500,blank=True)
     timestamp = models.DateTimeField(auto_now_add=True) 
