@@ -23,8 +23,8 @@ def contact_me(request):
     return render(request, 'contact_me.html')
 
 def skills(request):
-    certifications = Certification.objects.all()
-    tools = Tool.objects.all()
+    certifications = Certification.objects.all().order_by('certification_rank')
+    tools = Tool.objects.all().order_by('tool_rank')
     params = {'certificate': certifications, 'tool':tools}
     return render(request, 'skills.html', params)
 

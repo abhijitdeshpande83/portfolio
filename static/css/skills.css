@@ -40,11 +40,7 @@ h3 img {
     font-weight: bold;
     color: #fff;
 }
-.columns h4 {
-    font-size: 14px;
-    color: #fff;
-    margin-left: 25px;
-}
+
 .columns {
     flex: 1;
     padding: 10px;
@@ -130,6 +126,7 @@ h5 {
 
 .rows h4 {
     color: rgb(186, 178, 167);
+    font-size: 15px;
 }
 
 .content-certificates, .content-tools {

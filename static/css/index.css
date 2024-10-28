@@ -28,6 +28,7 @@
 
 .personal-pic img{
     width: 350px;
+    border-radius: 2em;
 }
 
 .hello {
