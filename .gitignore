@@ -1,2 +1,10 @@
+
+# Ignore the .env file
+.env
+
+# Ignore Python cache
 __pycache__/
+
+# Ignore Django migrations
+*/migrations/*
 
