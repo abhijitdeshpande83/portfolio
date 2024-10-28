@@ -5,6 +5,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 # Create your models here.
 class Certification(models.Model):
     certification_id = models.AutoField(primary_key=True)
+    certification_rank = models.IntegerField(default=99, blank=True) 
     certification_name = models.CharField(max_length=100, default='')
     certification_logo = models.FileField(upload_to='certifications', default='')
     verification_url = models.CharField(max_length=200, default='')
@@ -14,8 +15,9 @@ class Certification(models.Model):
 
 class Tool(models.Model):
     tool_id = models.AutoField(primary_key=True)
+    tool_rank = models.IntegerField(default=99, blank=True) 
     tool_name = models.CharField(max_length=100, default='')
-    tool_logo = models.FileField(upload_to='tools', default='')
+    tool_logo = models.FileField(upload_to='tools', default='') 
 
     def __str__(self) -> str:
         return self.tool_name

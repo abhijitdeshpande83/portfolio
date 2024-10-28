@@ -1,16 +1,34 @@
 body {
     margin: 0;
-    font-family: monospace;
-    background-color: black;
+    font-family: 'Calibri', 'Arial', sans-serif; ;
+    background-color: #141414;
     /* radial-gradient(ellipse at bottom, #003366, #333333); */ */
     overflow: auto; /* Prevent scroll bars */
 }
 
+.container-fluid {
+    /* background-color: red; */
+    /* margin-top: 1%; */
+    margin-right: 10%;
+}
+
 .navbar-brand img {
-    margin-left: 20px;
-    height: 25px;
-    width: 25px;
-    filter: invert(1); /* Make the image white */
+    margin-left: 30%;
+    height: 50px;
+    width: 50px;
+    /* filter: invert(1);  */
+}
+
+.brand-text {
+    font-size: 20px; /* Adjust font size */
+    color: white; /* Text color */
+}
+
+
+.navbar-nav .nav-link {
+    color: white; /* Default text color */
+    font-size: 22px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
@@ -18,46 +36,20 @@ body {
     transform: scale(1.1); /* Slightly enlarge the text */
 }
 
-.navbar {
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: white;
-}
-
-.navbar-nav .nav-link {
-    color: white; /* Default text color */
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-/* .navbar:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(255, 254, 254, 0.681);
-} */
 
 .navbar-brand:hover img {
-    filter: invert(1);
     transform: scale(1.2); /* Slightly enlarge the logo */
 }
 
-.container {
-    margin-top: 10px;
-    color: #f6f3fc;
+.contact-button {
+    /* margin-top: .5%; */
+    background-color: transparent;
+    border-radius: 20px;
+    border-width: 1px;
+    border-color: white;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
 }
 
-/* .video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; 
-} */
-
-.content {
-    position: relative;
-    z-index: 1; /* Ensure content appears on top */
-    color: white; /* Adjust text color as needed */
-    text-align: center; /* Center text */
-    padding: 20px;
+.navbar-nav .contact-button:hover {
+    background-color: rgba(108, 117, 125, 0.7); /* Change transparency on hover */
 }
