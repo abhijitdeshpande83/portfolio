@@ -1,7 +1,0 @@
-LOAD DATABASE
-     FROM sqlite:///Users/abhijitdeshpande/Documents/Portfolio/portfolio/db.sqlite3
-     INTO Removedql://Removed:Removed@Removed:Removed/Removed
-
-  SET work_mem TO '16MB';
-
--- Include all tables from the SQLite database
