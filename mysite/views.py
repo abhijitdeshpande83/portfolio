@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, FileResponse
+from django.http import HttpResponse, FileResponse, Http404
 from .models import Certification, Tool, Experience, Skill, ProfileAsset
 from django.urls import reverse_lazy
 from django.core.mail import send_mail
@@ -11,9 +11,8 @@ import os
 # Create your views here.
 
 def index(request):
-    profile = ProfileAsset.objects.all()
-    params = {'profile': profile}
-    return render(request, 'index.html', params)
+    profile_data = ProfileAsset.objects.all().first()
+    return render(request, 'index.html',{'profile_data': profile_data})
 
 def intro(request):
     return render(request, 'about.html')
@@ -101,6 +100,14 @@ def experience(request):
     return render(request, 'about.html', params)
 
 def download_cv(request):
-    return FileResponse(open('media/cv/Resume.docx', 'rb'), as_attachment=True, filename='Resume.docx')
+    resume = ProfileAsset.objects.all().first()
+    if resume.resume_file:
+        file_path = resume.resume_file.path
+        file_name = resume.resume_file.name
+        print(file_name)
+        _, file_extension = os.path.splitext(file_name) 
+        return FileResponse(open(file_path, 'rb'), as_attachment=True, filename=f"{"Abhijit_Deshpande_Resume"}{file_extension}")
+    else:
+        raise Http404("Resume file not found.")
 
  

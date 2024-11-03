@@ -58,9 +58,11 @@ class Skill(models.Model):
     def __str__(self) -> str:
         return self.title
 
-class ProfileAsset(models.Model):
+class ProfileAsset(models.Model): 
     profile_name = models.CharField(max_length=20, default='profile',blank=True)
     profile_pic = models.ImageField(upload_to='connectme', default='',blank=True)
     resume_file_name = models.CharField(max_length=20, default='resume',blank=True)
     resume_file = models.FileField(upload_to='cv', default='',blank=True)
 
+    def __str__(self):
+        return 'Profile Data'
