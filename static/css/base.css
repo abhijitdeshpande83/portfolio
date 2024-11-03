@@ -1,22 +1,23 @@
 body {
     margin: 0;
-    font-family: 'Calibri', 'Arial', sans-serif; ;
+    font-family: 'Calibri', 'Arial', sans-serif; 
     background-color: #141414;
-    /* radial-gradient(ellipse at bottom, #003366, #333333); */ */
+    /* radial-gradient(ellipse at bottom, #003366, #333333); */
     overflow: auto; /* Prevent scroll bars */
 }
 
 .container-fluid {
     /* background-color: red; */
-    /* margin-top: 1%; */
-    margin-right: 10%;
+    margin-left: 5vw;
+    margin-right: 20vw;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar-brand img {
-    margin-left: 30%;
+    /* margin-left: 5vw; */
     height: 50px;
     width: 50px;
-    /* filter: invert(1);  */
 }
 
 .brand-text {
@@ -44,6 +45,7 @@ body {
 .contact-button {
     /* margin-top: .5%; */
     background-color: transparent;
+    margin-top: .35%;
     border-radius: 20px;
     border-width: 1px;
     border-color: white;

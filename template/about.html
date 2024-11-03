@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}About{% endblock %}
+{% block title %}Experience{% endblock %}
 {% load static %}
 {% block style %}
 {% endblock %}
@@ -16,7 +16,7 @@
                 {% if i.timeline %}
                      <small>{{ i.timeline }}</small> 
                 {% endif %}           
-            <p>{{ i.company_experience|safe }}</p>
+            <h6>{{ i.company_experience|safe }}</h6>
         </div>
     </div>
     {% endfor %}

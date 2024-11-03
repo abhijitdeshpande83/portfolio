@@ -7,7 +7,7 @@ class Certification(models.Model):
     certification_id = models.AutoField(primary_key=True)
     certification_rank = models.IntegerField(default=99, blank=True) 
     certification_name = models.CharField(max_length=100, default='')
-    certification_logo = models.FileField(upload_to='certifications', default='')
+    certification_icon = models.FileField(upload_to='certifications', default='')
     verification_url = models.CharField(max_length=200, default='')
 
     def __str__(self) -> str:
@@ -17,7 +17,7 @@ class Tool(models.Model):
     tool_id = models.AutoField(primary_key=True)
     tool_rank = models.IntegerField(default=99, blank=True) 
     tool_name = models.CharField(max_length=100, default='')
-    tool_logo = models.FileField(upload_to='tools', default='') 
+    tool_icon = models.FileField(upload_to='tools', default='') 
 
     def __str__(self) -> str:
         return self.tool_name
@@ -47,3 +47,20 @@ class Experience(models.Model):
 
     def __str__(self):
         return self.company_name
+    
+class Skill(models.Model):
+    row_number = models.IntegerField(null=False, blank=False)    
+    column_number = models.IntegerField(null=False, blank=False)
+    title = models.CharField(max_length=50, blank=False, null=False)
+    skill_icon = models.FileField(upload_to='skills', default='')
+    description = models.TextField(max_length=2500,blank=False, null=False)
+
+    def __str__(self) -> str:
+        return self.title
+
+class ProfileAsset(models.Model):
+    profile_name = models.CharField(max_length=20, default='profile',blank=True)
+    profile_pic = models.ImageField(upload_to='connectme', default='',blank=True)
+    resume_file_name = models.CharField(max_length=20, default='resume',blank=True)
+    resume_file = models.FileField(upload_to='cv', default='',blank=True)
+

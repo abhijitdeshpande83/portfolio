@@ -6,22 +6,31 @@
 {% endblock %}
 
     {% block body %}
-    <!-- <video class="video-background" autoplay muted loop>
-        <source src="https://cdn.pixabay.com/video/2023/08/10/175446-853577055_large.mp4" type="video/mp4">
-    </video> -->
       <div class="container-index">
+        <div class="hello">Hi I'm&nbsp;<span class="name">Abhijit!</span></div>
         <div class="info">
             <div class="personal-info">
-                <div class="hello">Hi I'm <span class="name">Abhijit!</span></div>
-                <div class="about">Sr. Business Analyst, AWS Certified, Tableau Specialist</div>
-                <div class="more-about">Driven by curiosity, I continuously seek out opportunities to grow both professionally and personally.</div>
+                <span class="introduction">This website showcases my journey in technology and research, 
+                    reflecting my passion for innovation. Here, I share insights and project outcomes to 
+                    foster dialogue within the tech community and welcome opportunities for collaboration 
+                    and commissions, offering my unique illustrations and perspective.
+
+                    I am a driven professional currently engaged in contract work, actively seeking full-time 
+                    opportunities in Data Science, Machine Learning, and Data Analysis. With experience in cloud 
+                    technologies, machine learning, statistics, and Python development, I am equipped to deliver 
+                    impactful solutions.
+                </span>
+                <!-- <div class="about">Sr. Business Analyst, AWS Certified, Tableau Specialist</div> -->
+                <!-- <div class="more-about">Driven by curiosity, I continuously seek out opportunities to grow both professionally and personally.</div> -->
                 <div class="buttons">
                     <button class="download-button" onclick="window.location.href='{% url 'download_cv' %}'">Download CV</button>
                 </div>
             </div>
+            {% for profile in profile %}
             <div class="personal-pic">
-                <img src="media/connectme/profile.png" alt="Abhijit Deshpande">
+                <img src="{{ profile.profile_pic.url }}" alt="{{ profile.profile_name }}">
             </div>
+            {% endfor %}
         </div>
     </div>
       {% endblock %}
