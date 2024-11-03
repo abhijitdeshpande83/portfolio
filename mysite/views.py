@@ -14,8 +14,6 @@ def index(request):
     profile_data = ProfileAsset.objects.all().first()
     return render(request, 'index.html',{'profile_data': profile_data})
 
-def intro(request):
-    return render(request, 'about.html')
 
 def project(request):
     return render(request, 'projects.html')
@@ -97,14 +95,13 @@ class ContactFormView(FormView):
 def experience(request):
     experiences = Experience.objects.all()
     params = {'experience':experiences}
-    return render(request, 'about.html', params)
+    return render(request, 'experience.html', params)
 
 def download_cv(request):
     resume = ProfileAsset.objects.all().first()
     if resume.resume_file:
         file_path = resume.resume_file.path
         file_name = resume.resume_file.name
-        print(file_name)
         _, file_extension = os.path.splitext(file_name) 
         return FileResponse(open(file_path, 'rb'), as_attachment=True, filename=f"{"Abhijit_Deshpande_Resume"}{file_extension}")
     else:
