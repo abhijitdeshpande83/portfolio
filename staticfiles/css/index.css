@@ -2,42 +2,63 @@
     display: flex;
     /* background-color: green; */
     flex-direction: column;
-    padding: 80px 120px; 
+    padding: 2vw 6vw; 
     color: white;
 }
 .info {
+    margin-top: 2vw;
     display: flex;
+    flex-direction: row;
     color: rgb(186, 178, 167);
     justify-content: space-around;
+    /* background-color: red; */
 }
 
 .personal-info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 40px;
+    justify-content: start;
+    padding: 30px;
     width: 50vw;
-    /* background-color: red; */
+    /* background-color: yellow; */
 }
 
 .personal-pic {
     display: flex;
     width: 30vw; 
-    /* background-color: red; */
+    height: fit-content;
+    max-height: 60vh;
+    justify-content: center;
+    /* background-color: blue; */
+    justify-items: center;
 }
 
 .personal-pic img{
-    width: 350px;
+    width: 23vw;
+    border-radius: 2em;
+}
+
+.introduction {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #A7A8AA;
+    /* background-color: beige; */
 }
 
 .hello {
-    font-size: 40px;
+    /* margin-top: 20px; */
+    display: flex;
+    font-size: 3vw;
     font-weight: bold;
     color: white;
+    justify-content: center;
+    justify-items: center;
+    /* background-color: aquamarine; */
 }
 
 .name {
-    font-size: 40px;
+    font-size: 3vw;
     font-weight: bold;
     color: rgba(96,165,250,255);
 }
