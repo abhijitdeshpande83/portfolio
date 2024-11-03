@@ -1,11 +1,20 @@
 .project {
     /* background-color: brown; */
-    justify-content: center;
-    align-items: center;
-    margin: 15% auto ;
+    margin: 7% 20vw auto 20vw;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
 }
 
+.project h1,
+.project h2 {
+    flex-wrap: wrap;
+    text-align: center; 
+    margin-top: 4%;
+}
 
-.project h1 {
-    text-align: center;
+.project h2 {
+    font-size: 25px;
+    color: #A7A8AA;
 }
