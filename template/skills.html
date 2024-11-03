@@ -9,63 +9,38 @@
 <div class="flex-container">
     <div class="container-skills">
         <div class="content-container">
-            <div class="rows">
-                <div class="columns">
-                    <h3><img src="/media/skills/AI_w.png" alt="Data Science & Deep Learning">Data Science & Deep Learning</h3>
-                    <h4>My work involves utilizing data analysis and deep learning techniques to extract insights and solve 
-                        complex problems. By leveraging frameworks such as TensorFlow and Keras, I build and train models 
-                        that drive data-informed strategies.</h4>
-                </div>
-                <div class="columns">
-                    <h3><img src="/media/skills/code_w.png" alt="Software Development">Software Development</h3>
-                    <h4>I have experience developing backend applications using Python and Django, creating robust and 
-                        scalable web services. My focus on clean code and best practices ensures that the applications 
-                        are maintainable and efficient, supporting various project needs.</h4>
-                </div>
+        {% for row_number in row_numbers %}
+            <div class="rows">    
+            {% for i in skill %}
+                {% if i.row_number == row_number %}
+                        {% if i.column_number == 1 %}
+                            <div class="columns">
+                                <h3><img src="/media/{{ i.skill_icon }}" alt="{{ i.title }}">{{ i.title }}</h3>
+                                <h4>{{ i.description }}</h4>
+                            </div>
+                        {% else %}
+                            <div class="columns">
+                                <h3><img src="/media/{{ i.skill_icon }}" alt="{{ i.title }}">{{ i.title }}</h3>
+                                <h4>{{ i.description }}</h4>
+                            </div>
+                        {% endif %}
+                {% endif %}
+            {% endfor %}
             </div>
-            <div class="rows">
-                    <div class="columns">
-                        <h3><img src="/media/skills/adaptation_w.png" alt="Adaptability">Adaptability</h3>
-                        <h4>I excel in rapidly evolving environments, quickly learning new tools and technologies. 
-                            My ability to adapt ensures that I remain at the forefront of industry trends, effectively 
-                            integrating innovative methodologies into my projects.</h4>
-                    </div>
-                    <div class="columns">
-                        <h3><img src="/media/skills/cloud_w.png" alt="Cloud">Cloud Computing</h3>
-                        <h4>I have hands-on experience with AWS, holding certifications in AWS Cloud Foundations and 
-                            Solutions Architect. My expertise enables me to design and deploy scalable, secure 
-                            applications in the cloud, optimizing resource management and enhancing project efficiency.</h4>
-                    </div>
-            </div>
-            <div class="rows">
-                    <div class="columns">
-                        <h3><img src="/media/skills/statistics_w.png" alt="Statistics">Statistics</h3>
-                        <h4>I use Python and SAS for statistical modeling, applying techniques such as 
-                            regression analysis, time series forecasting, and hypothesis testing. This 
-                            expertise allows me to interpret complex datasets and provide actionable 
-                            insights that influence decision-making.</h4>
-                    </div>
-                    <div class="columns">
-                        <h3><img src="/media/skills/visualization_w.png" alt="Visualization">Visualization</h3>
-                        <h4>I leverage Tableau for data visualization, creating interactive dashboards 
-                            and reports that transform complex datasets into clear, actionable insights. 
-                            This expertise enables me to effectively communicate findings to stakeholders, 
-                            facilitating data-driven decision-making.</h4>
-                    </div>
-            </div>
+        {% endfor %}
         </div>
-
+                
         <div class="slider-container">
             <!-- Certifications Slider -->
             <div class="slider" id="certifications-slider">
                 <div class="slider-title">
-                    <h4>Certifications</h4>
+                    <h4><img src="/media/certifications/certificate.png" alt="Certification Icon" class="certification-icon">Certifications</h4>
                 </div>
                 <div class="items-container">
                     {% for i in certificate %}
                     <div class="item">
                         <a href="{{ i.verification_url }}" target="_blank" rel="noopener noreferrer" class="verification_link">
-                            <img src="/media/{{ i.certification_logo }}" class="card-img-top" alt="{{ i.certification_name }}">
+                            <img src="/media/{{ i.certification_icon }}" class="card-img-top" alt="{{ i.certification_name }}">
                             <h5>{{ i.certification_name }}</h5>
                         </a>
                     </div>
@@ -78,12 +53,12 @@
             <!-- Tools Slider -->
             <div class="slider" id="tools-slider">
                 <div class="slider-title">
-                    <h4>Tools</h4>
+                    <h4><img src="/media/tools/tool.png" alt="Tool Icon" class="tool-icon">Tools</h4>
                 </div>
                 <div class="items-container">
                     {% for i in tool %}
                     <div class="item">
-                        <img src="/media/{{ i.tool_logo }}" class="card-img-top" alt="{{ i.tool_name }}">              
+                        <img src="/media/{{ i.tool_icon }}" class="card-img-top" alt="{{ i.tool_name }}">              
                         <h5>{{ i.tool_name }}</h5>
                     </div>
                     {% endfor %}

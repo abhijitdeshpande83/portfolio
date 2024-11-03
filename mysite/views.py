@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, FileResponse
-from .models import Certification, Tool, Experience
+from .models import Certification, Tool, Experience, Skill, ProfileAsset
 from django.urls import reverse_lazy
 from django.core.mail import send_mail
 from django.conf import settings
@@ -11,7 +11,9 @@ import os
 # Create your views here.
 
 def index(request):
-    return render(request,'index.html')
+    profile = ProfileAsset.objects.all()
+    params = {'profile': profile}
+    return render(request, 'index.html', params)
 
 def intro(request):
     return render(request, 'about.html')
@@ -25,7 +27,12 @@ def contact_me(request):
 def skills(request):
     certifications = Certification.objects.all().order_by('certification_rank')
     tools = Tool.objects.all().order_by('tool_rank')
-    params = {'certificate': certifications, 'tool':tools}
+    skills = Skill.objects.all().order_by('row_number', 'column_number')
+    total_rows = Skill.objects.values_list('row_number', flat=True).distinct().count()
+    row_numbers = list(range(1, total_rows + 1))  # Create a list of number of rows
+
+
+    params = {'certificate': certifications, 'tool':tools,  'skill': skills, 'row_numbers': row_numbers} 
     return render(request, 'skills.html', params)
 
 def thankyou(request):
@@ -96,5 +103,4 @@ def experience(request):
 def download_cv(request):
     return FileResponse(open('media/cv/Resume.docx', 'rb'), as_attachment=True, filename='Resume.docx')
 
-# def tools(request):
-#     return render(request, 'tools.html')
+ 

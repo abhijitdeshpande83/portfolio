@@ -8,3 +8,7 @@ __pycache__/
 # Ignore Django migrations
 */migrations/*
 
+**/j_*
+
+dump.sql
+migrate.load

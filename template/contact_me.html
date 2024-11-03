@@ -19,13 +19,14 @@
             </ul>
         </div>
     </div>
-    
-    <div class="contact-form-container">
+    <div class="contact-formcontainer">
+    <div class="contact-form">
         <form action="{% url 'contact_me' %}" method="post">
             {% csrf_token %}
                 {{ form.as_p }}
             <button type="submit" class="submit-button">Submit</button>
         </form>
+    </div>
     </div>
 </div>
 {% endblock %}
