@@ -26,11 +26,11 @@
                     <button class="download-button" onclick="window.location.href='{% url 'download_cv' %}'">Download CV</button>
                 </div>
             </div>
-            {% for profile in profile %}
             <div class="personal-pic">
-                <img src="{{ profile.profile_pic.url }}" alt="{{ profile.profile_name }}">
+                {% if profile_data %}
+                <img src="/media/{{profile_data.profile_pic}}" alt="{{ profile_data.profile_name }}">
+                {% endif %}
             </div>
-            {% endfor %}
         </div>
     </div>
       {% endblock %}
