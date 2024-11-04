@@ -21,14 +21,13 @@ body {
 }
 
 .brand-text {
-    font-size: 20px; /* Adjust font size */
+    font-size: 1.25rem; /* Adjust font size */
     color: white; /* Text color */
 }
 
-
 .navbar-nav .nav-link {
     color: white; /* Default text color */
-    font-size: 22px;
+    font-size: 1.25rem;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -45,8 +44,10 @@ body {
 .contact-button {
     /* margin-top: .5%; */
     background-color: transparent;
+    padding: .7vh .7vw;
     margin-top: .5%;
     border-radius: 20px;
+    font-size: 1rem;
     border-width: 1px;
     border-color: white;
     transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
@@ -54,4 +55,31 @@ body {
 
 .navbar-nav .contact-button:hover {
     background-color: rgba(108, 117, 125, 0.7); /* Change transparency on hover */
+}
+
+@media (max-width: 768px) {
+
+.navbar-brand img {
+    /* margin-left: 5vw; */
+    height: 25px;
+    width: 25px;
+}
+
+.brand-text {
+    font-size: 10px; /* Adjust font size */
+}
+
+.navbar-nav .nav-link {
+    font-size: 10px;
+}
+.contact-button {
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: .5%;
+    border-radius: 20px;
+    border-width: 1px;
+    padding: .1vh 1vw;
+    font-size: .5rem;
+}
+
 }

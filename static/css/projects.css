@@ -7,8 +7,7 @@
     align-items: center; 
 }
 
-.project h1,
-.project h2 {
+.project h1, .project h2 {
     flex-wrap: wrap;
     text-align: center; 
     margin-top: 4%;
@@ -17,4 +16,16 @@
 .project h2 {
     font-size: 25px;
     color: #A7A8AA;
+}
+
+@media (max-width: 768px) {
+
+.project h1 {
+    font-size: 20px;
+}
+
+.project h2 {
+    font-size: 12px;
+}
+
 }

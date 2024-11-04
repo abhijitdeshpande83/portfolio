@@ -18,7 +18,7 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
-    padding: 30px;
+    padding: 2vw 3vh;
     width: 50vw;
     /* background-color: yellow; */
 }
@@ -40,7 +40,7 @@
 
 .introduction {
     margin-top: 0;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     color: #A7A8AA;
     /* background-color: beige; */
@@ -63,20 +63,13 @@
     color: rgba(96,165,250,255);
 }
 
-.about {
-    font-size: 20px;
-}
-.more-about {
-    font-size: 15px;
-}
-
 .buttons button {
     position: relative;
-    margin-top: 15px;
-    padding: 10px 10px;
-    font-size: 14px;
+    margin-top: 2vh;
+    padding: 1.2vh .5vw;
+    font-size: .9rem;
     background-color: green;
-    border-radius: 15px;
+    border-radius: 1rem;
     transition: background-color 0.3s ease;
 }
 
@@ -84,3 +77,42 @@
     background-color: white;
     color: green;
 }
+
+@media (max-width: 768px) {
+
+.container-index {
+    /* background-color: green; */
+    flex-direction: column;
+    padding: 1vw 1vw; 
+    color: white;
+}
+
+.personal-info {
+    padding: 1vw 1vh;
+    width: 50vw;
+    /* background-color: yellow; */
+}
+
+.introduction {
+    font-size: .5rem;
+}
+
+.buttons button {
+    margin-top: 1.2vh;
+    padding: .4vh .5vw;
+    font-size: .3rem;
+    background-color: green;
+    border-radius: .3rem;
+}
+
+.personal-pic {
+    margin-top: 1.5vh;
+}
+
+.personal-pic img{
+    width: 30vw;
+    border-radius: 1em;
+}
+
+}
+    
