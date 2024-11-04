@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: 0px 100px;
+    padding: 0 7vw;
     box-sizing: border-box;
     width: 100%;
     overflow: hidden;
@@ -36,7 +36,7 @@ h3 img {
     height: auto;
     max-width: 2.5vw;
     max-height: 3.125vh;
-    margin-right: 5px;
+    margin-right: 0.3vw;
 }
 
 .columns h3 {
@@ -83,6 +83,7 @@ h3 img {
 
 .slider-title h4 {
     color: #fff;
+    font-size: 1.3rem;
 }
 .items-container {
     display: flex;
@@ -98,8 +99,8 @@ h3 img {
     height: 230px;
     text-align: justify;
     background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 25px;
-    padding: 30px;
+    border-radius: 1.5rem;
+    padding: 3vh;
     transition: 0.5s;
     position: absolute;
     left: calc(50% - 7vw);
@@ -151,7 +152,7 @@ h5 {
     display: block; /* Make the anchor tag a block-level element */
     position: relative; /* Needed for positioning if necessary */
     transition: transform 0.3s ease; /* Smooth transition for the scaling effect */
-    border-radius: 3px; /* Optional: rounded corners for the card */
+    border-radius: 2rem; /* Optional: rounded corners for the card */
     overflow: hidden; /* Ensure children don't overflow */
 }
 
@@ -164,7 +165,7 @@ h5 {
 
 .verification_link h5 {
     margin: 0; /* Remove default margin */
-    padding: 5px; /* Optional: add some padding around the text */
+    padding: .3vw; /* Optional: add some padding around the text */
 }
 
 .certification-icon, .tool-icon {
@@ -172,5 +173,48 @@ h5 {
     height: auto;
     max-width: 2.5vw;
     max-height: 2.5vh;
-    margin-right: 5px;
+    margin-right: .3vw;
 }
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+
+.item {
+    width: auto; /* Make items wider on smaller screens */
+    height: auto; /* Adjust height to fit content */
+    padding: 3vh; /* Optionally reduce padding further */
+    border-radius: 1.5rem; /* Smaller border radius for mobile */
+    left: calc(30% - 6vw);
+}
+
+.slider-title h4 {
+    font-size: .7rem;
+}
+
+h5 {
+    font-size: .5rem; /* Base size */
+}
+
+button {
+    top: 32%;
+    font-size: small;
+}
+
+.slider {
+    position: relative;
+    margin-top: .5vh;
+    width: 20vw; /* Full width of the container */
+    height: 25vh;
+    margin-bottom: -4vh;
+}
+
+
+.columns {
+    padding: .5vw;
+    margin: 1.5vw 1.5vw 1.5vw 1.5vw;
+    width: 20vw;
+    height: 12vh;
+    border-radius: 1vw;
+}
+}
+

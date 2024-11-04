@@ -3,7 +3,7 @@
     margin: 100px, auto;
 }
 .work {
-    padding: 10px 50px;
+    padding: 0.52vw 2.60vw; 
     position: relative;
     width: 70%;
     /* background-color: grey; */
@@ -12,7 +12,7 @@
 }
 
 .container-work {
-    padding: 0px 40px;
+    padding: 0 3vw;
     position: relative;
     width: 100%;
     /* background-color: green; */
@@ -21,11 +21,11 @@
 }
 
 .experience {
-    padding: 20px 20px;
+    padding: 1.04vw 1.04vw;
     /* background: red; */
     position: relative;
     color: white;
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 .container-work img {
@@ -40,11 +40,11 @@
 }
 
 h2 {
-    font-size: 17px;
+    font-size: 1.0625rem;
     font-weight: bold;
 }
 h3 {
-    font-size: 15px;
+    font-size: 0.9375rem;
     color: white;
     /* font-style: italic; */
 }
@@ -61,7 +61,7 @@ h3 {
 }
 
 .container-education {
-    padding: 0px 50px;
+    padding: 1vh 1.7vw;
     position: relative;
     width: 100%;
     /* background-color: green; */
@@ -70,7 +70,7 @@ h3 {
 }
 
 .graduation {
-    padding: 10px 20px;
+    padding: 0vw 2.6vw;
     /* background: red; */
     position: relative;
     color: white;
@@ -78,7 +78,7 @@ h3 {
 }
 
 .education {
-    padding: 10px 50px;
+    padding: 0.52vw 2.6vw;
     position: relative;
     width: 70%;
     /* background-color: rgb(128, 0, 113); */
@@ -95,4 +95,45 @@ h1 {
 
 h6 {
     color: #A7A8AA;
+}
+
+@media (max-width: 768px) {
+
+.work {
+    padding: 0.52vw 2.60vw; 
+    position: relative;
+    width: 100%;
+    /* background-color: grey; */
+    justify-content: center;
+    margin: auto auto 0 auto;
+}
+
+.container-work {
+    padding: 0 10vw;
+    width: 100%;
+    /* background-color: green; */
+}
+
+.experience {
+    padding: 4vw 4vw;
+    /* background: red; */
+    font-size: 0.8125rem;
+}
+
+.container-education {
+    padding: 0px 10vw;
+    width: 100%;
+}
+
+.education {
+    padding: 0.52vw 2.6vw;
+    width: 100%;
+    /* background-color: rgb(128, 0, 113); */
+}
+
+.container-education {
+    padding: 1vh 12vw;
+    width: 100%;
+}
+
 }
