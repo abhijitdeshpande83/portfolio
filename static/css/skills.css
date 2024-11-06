@@ -55,18 +55,18 @@ h3 img {
     flex-wrap: wrap;
     /* background-color: purple; */
     flex-direction: column;
-    margin-top: 1vh;
+    /* margin-top: 1vh; */
     align-items: center;
     justify-content: center;
     width: 50vw;
     height: 100%;
-    /* gap: .1vh;  */
+    gap: 1vh; 
 }
 
 .slider {
     position: relative;
     width: 25vw; /* Full width of the container */
-    height: 40vh;
+    height: 45vh;
     /* background-color: olive; */
 }
 
@@ -287,4 +287,3 @@ button {
 }
 
 }
-
