@@ -11,11 +11,20 @@
     <div class="container-work">
         <img src="/media/experience/work.png">
         <div class="experience">
-            <h2>{{ i.company_name }}</h2>
-            <h3>{{ i.role }}</h3>
+            <div class="company-timeline">
+                <h2>{{ i.company_name }}</h2>
                 {% if i.timeline %}
-                     <small>{{ i.timeline }}</small> 
-                {% endif %}           
+                    <small class="location">{{ i.timeline }}</small>
+                {% endif %}
+            </div>
+        
+            <div class="role-location">
+                <h3>{{ i.role }}</h3>
+                {% if i.location %}
+                    <small class="timeline">{{ i.location }}</small>
+                {% endif %}
+            </div>
+            <h4 class="project-title">{{ i.project_title }}</h4>
             <h6>{{ i.company_experience|safe }}</h6>
         </div>
     </div>

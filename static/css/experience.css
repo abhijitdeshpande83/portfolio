@@ -28,6 +28,31 @@
     font-size: 0.8125rem;
 }
 
+.experience .company-timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -.2vh;
+    /* background-color: red; */
+}
+
+.location {
+    font-style: italic;
+}
+
+.experience .role-location {
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+    align-items: center;
+    font-style: italic;
+}
+
+.project-title {
+    font-size: .9rem;
+    margin-bottom: 1.5vh;
+}
+
 .container-work img {
     position: absolute;
     width: 25px;
@@ -106,6 +131,10 @@ h6 {
     /* background-color: grey; */
     justify-content: center;
     margin: auto auto 0 auto;
+}
+
+.location, .timeline {
+    display: none;
 }
 
 .container-work {
