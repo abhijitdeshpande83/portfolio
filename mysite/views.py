@@ -93,7 +93,7 @@ class ContactFormView(FormView):
             return self.form_invalid(form)
         
 def experience(request):
-    experiences = Experience.objects.all()
+    experiences = Experience.objects.all().order_by('experience_rank')
     params = {'experience':experiences}
     return render(request, 'experience.html', params)
 

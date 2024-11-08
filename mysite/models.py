@@ -40,10 +40,14 @@ class Contact(models.Model):
 
 class Experience(models.Model):
     company_id = models.AutoField(primary_key=True)
+    experience_rank = models.IntegerField(default=99, blank=True) 
     company_name = models.CharField(max_length=50, default='')
-    company_experience = models.TextField(default='',blank=True)
-    timeline = models.CharField(max_length=20, default='', blank=True)
+    location = models.CharField(max_length=20, default='')
     role = models.CharField(max_length=50, default='')
+    timeline = models.CharField(max_length=20, default='', blank=True)
+    project_title = models.CharField(max_length=200, default='', blank=True)
+    company_experience = models.TextField(default='',blank=True)
+
 
     def __str__(self):
         return self.company_name
