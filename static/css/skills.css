@@ -260,7 +260,7 @@ h3 img {
     max-width: 100px;
     max-height: 115px;
     padding: 1.5vh; /* Optionally reduce padding further */
-    border-radius: 1rem; /* Smaller border radius for mobile */
+    border-radius: 1.2rem; /* Smaller border radius for mobile */
     /* left: calc(30% - 6vw); */
 }
 
@@ -273,7 +273,7 @@ h5 {
 }
 
 button {
-    top: 32%;
+    top: 35%;
     font-size: 1rem;
 }
 
