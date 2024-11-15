@@ -36,27 +36,68 @@
 .connect-withme p {
     margin-top: 1vw; /* Ensures there’s no extra space above the paragraph */
 }
-.connect-withme img:hover {
-    opacity: 0.7;         /* Change opacity on hover */
+
+/* .connect-withme img:hover {
+    opacity: 0.7;         
     transform: scale(1.1);
-}
+} */
 
-.connect-withme img {
-    display: block;       /* Remove extra space below the image */
-    width: 4vw;          /* Set width of the icons */
-    height: 4vw;         /* Set height of the icons */
-    transition: transform 0.3s ease; /* Smooth transition for transform change */
-}
+/* .connect-withme img {
+    display: block;      
+    width: 4vw;         
+    height: 4vw;        
+    transition: transform 0.3s ease; 
+} */
 
-.connect-withme ul{
+.social {
     display: flex;        /* Use Flexbox layout */
     gap: 3vw;            /* Add space between the items */
     padding: 0;          /* Remove default padding */
     margin: 0;           /* Remove default margin */
-    list-style: none;
+    /* list-style: none; */
     margin-top: 1vw;
     margin-left: 0vw;
-    /* background-color: yellow; */
+    /* background-color: red; */
+}
+
+.icon-link i {
+    display: flex;
+  }
+
+.icon-link {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4vw;
+  height: 4vw;
+  /* aspect-ratio: 1; */
+  font-size: 1.8rem;
+  color: #141414;
+  background-color: #1E90FF;
+  border-radius: 50%;
+  transition: color 0.5s ease-in-out;
+}
+
+@property --fill {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 0%;
+}
+
+.icon-link:hover {
+  color: white ;
+  --fill: 100%;
+}
+
+.icon-link::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  inset: -3px;
+  border-radius: inherit;
+  background: conic-gradient(greenyellow var(--fill), transparent var(--fill));
+  transition: --fill 0.6s ease-in-out;
 }
 
 .contact-formcontainer {
@@ -149,7 +190,7 @@
     /* background-color: aquamarine; */
 }
 
-.connect-withme ul{
+/* .connect-withme ul{
     display: flex;  
     width: 80vw;  
     align-items: center;
@@ -160,22 +201,73 @@
     list-style: none;
     margin-top: 0vw;
     margin-left: 0vw;
-    /* background-color: purple; */
+} */
+
+.social {
+    display: flex;        
+    gap: 3vw;  
+    width: 80%;          
+    padding: 0;          
+    margin: 0;         
+    /* list-style: none; */
+    /* margin-top: 1vw; */
+    margin-left: 0vw;
+    justify-content: space-around;
+    /* background-color: red; */
 }
 
-.connect-withme img {
+.icon-link i {
+    display: flex;
+  }
+
+.icon-link {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12vw;
+  height: 12vw;
+  /* aspect-ratio: 1; */
+  font-size: .8rem;
+  color: #141414;
+  background-color: #1E90FF;
+  border-radius: 50%;
+  transition: color 0.5s ease-in-out;
+}
+
+@property --fill {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 0%;
+}
+
+.icon-link:hover {
+  color: white ;
+  --fill: 100%;
+}
+
+.icon-link::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  inset: -3px;
+  border-radius: inherit;
+  background: conic-gradient(greenyellow var(--fill), transparent var(--fill));
+  transition: --fill 0.6s ease-in-out;
+}
+
+/* .connect-withme img {
     display: block;      
     width: 15vw;          
     height: 15vw;         
     transition: transform 0.3s ease; 
-}
+} */
 
 .contact-formcontainer {
     margin: 3vh 1vw auto 1vw;
     padding: 0vw;
     /* background-color: yellow; */
 }
-
 
 .contact-form {  
     max-width: 100vw;
