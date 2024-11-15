@@ -22,8 +22,8 @@
     /* background-color: bisque; */
     display: flex;
     /* flex-direction: row; */
-    align-items: center;
-    justify-content: left;    
+    /* justify-items: center; */
+    justify-content: left;
 }
 
 #detail-view {
@@ -38,16 +38,16 @@
 }
 
 .project-name {
-    padding: 0.52vw 2.60vh; 
-    display: flex;
-    /* width: 100%; */
+    /* padding: 0.52vw 2.60vh;  */
+    display: flex; 
     /* background-color: red; */
     font-size: 1.1rem;
     color: #B0C4DE;
-    /* justify-content: flex-start; */
+    margin-right: 1vw;
     /* align-items: flex-start; */
-    margin: auto auto 0 auto;
+    /* margin: auto auto 0 auto; */
 }
+
 .project-description {
     /* background-color: aqua; */
     padding: 0.52vw 2.60vh; 
@@ -59,7 +59,7 @@
 @media (max-width: 768px) {
 
 .project {
-     /* background-color: brown; */
+    /* background-color: brown; */
     display: flex;
     padding: 1vw 2.60vw; 
     width: 100%;
@@ -77,14 +77,27 @@
     width: 100%;
     height: 100%;
 }
-.project-name {
-    padding: 0.52vw 2.60vw; 
-    width: 100%;
-    /* background-color: grey; */
-    font-size: .9rem;
-    /* justify-content: center; */
-    margin: auto auto 0 auto;
+
+.project-view {
+    /* background-color: magenta; */
+    display: flex;
+    /* flex-direction: row; */
+    /* justify-items: center; */
+    justify-content: left;
+    align-items: center;
 }
+
+.project-name {
+    /* padding: 0.52vw 2.60vh;  */
+    display: flex; 
+    /* background-color: red; */
+    font-size: .9rem;
+    color: #B0C4DE;
+    margin-right: 1vw;
+    /* align-items: flex-start; */
+    /* margin: auto auto 0 auto; */
+}
+
 
 .project-description {
     padding: 4vw 4vw;
@@ -95,6 +108,7 @@
 #detail-view {
     background-color: grey;
     display: flex;
+    padding: auto;
     width: 3vw;
     height: 3vh;
     align-items: center;
