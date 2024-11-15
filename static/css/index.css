@@ -67,14 +67,14 @@
     margin-top: 2vh;
     padding: 1.2vh .5vw;
     font-size: .9rem;
-    background-color: green;
+    background-color: #1E90FF;
     border-radius: 1rem;
     transition: background-color 0.3s ease;
 }
 
 .buttons button:hover {
     background-color: white;
-    color: green;
+    color: #1E90FF;
 }
 
 @media (max-width: 768px) {

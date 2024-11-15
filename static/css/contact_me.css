@@ -102,7 +102,7 @@
     position: relative; /* Position the button absolutely within the container */
     bottom: -1vw; /* Distance from the bottom of the container */
     left: auto;
-    background-color: green;
+    background-color: #1E90FF;
     color: white;
     border: none;
     border-radius: 4px;
