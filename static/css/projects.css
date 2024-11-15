@@ -18,14 +18,34 @@
     height: 100%;
 }
 
+.project-view {
+    /* background-color: bisque; */
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: left;    
+}
+
+#detail-view {
+    background-color: grey;
+    display: flex;
+    width: 3.5vw;
+    height: 3.5vh;
+    font-size: 0.9rem;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
 .project-name {
     padding: 0.52vw 2.60vh; 
-    width: 100%;
+    display: flex;
+    /* width: 100%; */
     /* background-color: red; */
     font-size: 1.1rem;
     color: #B0C4DE;
     /* justify-content: flex-start; */
-    align-items: flex-start;
+    /* align-items: flex-start; */
     margin: auto auto 0 auto;
 }
 .project-description {
@@ -70,6 +90,16 @@
     padding: 4vw 4vw;
     font-size: 0.8125rem;
     color: #A7A8AA;
+}
+
+#detail-view {
+    background-color: grey;
+    display: flex;
+    width: 3vw;
+    height: 3vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
 }
 
 }

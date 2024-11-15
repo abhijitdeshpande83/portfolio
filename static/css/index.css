@@ -120,10 +120,10 @@
 
 .buttons button {
     margin-top: 1.2vh;
-    padding: .4vh .5vw;
-    font-size: 1rem;
-    background-color: green;
-    border-radius: .3rem;
+    padding: .4vh .7vw;
+    font-size: .8rem;
+    background-color: #1E90FF;
+    border-radius: .5rem;
 }
 
 .personal-pic {

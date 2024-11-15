@@ -9,7 +9,12 @@
 <div class="project">
     <div class="project-details">
     {% for i in projects %}
-        <h1 class="project-name">{{ i.project_name }}</h1>
+        <div class="project-view">
+            <h1 class="project-name">{{ i.project_name }}</h1>
+            {% if i.link %}
+                <a class="btn btn-primary" href="{{ i.link }}" role="button" id="detail-view"  target="_blank" rel="noopener noreferrer">view</a>
+            {% endif %}
+        </div>
         <h2 class="project-description">{{ i.project_description|safe }}</h2>
     {% endfor %}
     </div>  

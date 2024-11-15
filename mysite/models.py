@@ -78,7 +78,7 @@ class Project(models.Model):
     project_description = models.TextField(default='',blank=True)
     project_doc = models.ImageField(upload_to='projects', default='',blank=True)
     tools = models.CharField(max_length=100, default='', blank=True)
-    links = models.CharField(max_length=200, default='', blank=True)
+    link = models.CharField(max_length=200, default='', blank=True)
 
     def __str__(self) -> str:
         return self.project_name

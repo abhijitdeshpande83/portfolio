@@ -10,8 +10,8 @@ body {
     /* background-color: red; */
     margin-left: 5vw;
     margin-right: 20vw;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: space-around; */
+    /* align-items: center; */
 }
 
 .navbar-brand img {
@@ -41,11 +41,10 @@ body {
     transform: scale(1.2); /* Slightly enlarge the logo */
 }
 
-.contact-button {
-    /* margin-top: .5%; */
+#contact-button {
     background-color: transparent;
     padding: .7vh .7vw;
-    margin-top: .5%;
+    margin-top: 5%;
     border-radius: 20px;
     font-size: 1rem;
     border-width: 1px;
@@ -53,7 +52,7 @@ body {
     transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
 }
 
-.navbar-nav .contact-button:hover {
+.navbar-nav #contact-button:hover {
     background-color: rgba(108, 117, 125, 0.7); /* Change transparency on hover */
 }
 
@@ -69,10 +68,19 @@ body {
     font-size: 10px; /* Adjust font size */
 }
 
+.container-fluid {
+    /* background-color: red; */
+    margin-left: 5vw;
+    margin-right: 1vw;
+    /* justify-content: space-around; */
+    /* align-items: center; */
+}
+
 .navbar-nav .nav-link {
     font-size: 10px;
 }
-.contact-button {
+
+#contact-button {
     flex-direction: column;
     flex-wrap: wrap;
     margin-top: .5%;
@@ -80,6 +88,20 @@ body {
     border-width: 1px;
     padding: .1vh 1vw;
     font-size: .5rem;
+}
+
+.navbar-toggler {
+    background-color: white;
+    border-radius: 1rem;
+    /* width: 25px;    */
+    /* height: 25px;  */
+}
+
+/* Size the hamburger icon (navbar-toggler-icon) */
+.navbar-toggler-icon {
+    width: 3.5vw;   
+    height: 2vh; 
+    /* position: fixed; */
 }
 
 }
