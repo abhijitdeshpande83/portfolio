@@ -75,7 +75,7 @@
   font-size: 1.8rem;
   color: #141414;
   background-color: #1E90FF;
-  border-radius: 50%;
+  border-radius: 35%;
   transition: color 0.5s ease-in-out;
 }
 
@@ -228,10 +228,10 @@
   width: 12vw;
   height: 12vw;
   /* aspect-ratio: 1; */
-  font-size: .8rem;
+  font-size: 1.5rem;
   color: #141414;
   background-color: #1E90FF;
-  border-radius: 50%;
+  border-radius: 35%;
   transition: color 0.5s ease-in-out;
 }
 
