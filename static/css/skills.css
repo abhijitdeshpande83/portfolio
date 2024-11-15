@@ -273,7 +273,7 @@ h5 {
 }
 
 button {
-    top: 35%;
+    top: 37%;
     font-size: 1rem;
 }
 
@@ -283,7 +283,7 @@ button {
     align-items: center;
     margin-top: .5vh;
     width: 60vw; /* Full width of the container */
-    height: 25vh;
+    height: 20vh;
     /* margin-bottom: -7vh; */
     /* background-color: orangered; */
 }
