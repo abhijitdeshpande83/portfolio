@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, FileResponse, Http404
-from .models import Certification, Tool, Experience, Skill, ProfileAsset
+from .models import Certification, Tool, Experience, Skill, ProfileAsset, Project
 from django.urls import reverse_lazy
 from django.core.mail import send_mail
 from django.conf import settings
@@ -16,7 +16,9 @@ def index(request):
 
 
 def project(request):
-    return render(request, 'projects.html')
+    projects = Project.objects.all().order_by('project_number')
+    
+    return render(request, 'projects.html', {'projects': projects})
 
 def contact_me(request):
     return render(request, 'contact_me.html')

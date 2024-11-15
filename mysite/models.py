@@ -70,3 +70,15 @@ class ProfileAsset(models.Model):
 
     def __str__(self):
         return 'Profile Data'
+
+class Project(models.Model):
+    project_number = models.IntegerField(default='99',blank=True)
+    project_name = models.CharField(max_length=200, default='')
+    timeline = models.CharField(max_length=20, default='', blank=True)
+    project_description = models.TextField(default='',blank=True)
+    project_doc = models.ImageField(upload_to='projects', default='',blank=True)
+    tools = models.CharField(max_length=100, default='', blank=True)
+    links = models.CharField(max_length=200, default='', blank=True)
+
+    def __str__(self) -> str:
+        return self.project_name
