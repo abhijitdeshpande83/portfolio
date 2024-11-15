@@ -7,9 +7,11 @@
 
 {% block body %}
 <div class="project">
-    <h1>Feautured Projects</h1>
-    <h2>I'm currently working on several projects that are ready for use, 
-        but I need to enhance their presentation before hosting them on 
-        my portfolio. I'm actively working on this and will share them soon.</h2>
+    <div class="project-details">
+    {% for i in projects %}
+        <h1 class="project-name">{{ i.project_name }}</h1>
+        <h2 class="project-description">{{ i.project_description|safe }}</h2>
+    {% endfor %}
+    </div>  
 </div>
 {% endblock %}
