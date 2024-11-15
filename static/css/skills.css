@@ -54,7 +54,7 @@ h3 img {
     display: flex;
     flex-wrap: wrap;
     /* background-color: purple; */
-    flex-direction: column;
+    /* flex-direction: column; */
     /* margin-top: 1vh; */
     align-items: center;
     justify-content: center;
@@ -65,8 +65,10 @@ h3 img {
 
 .slider {
     position: relative;
+    display: block;
     width: 25vw; /* Full width of the container */
-    height: 45vh;
+    height: 40vh;
+    margin-top: 1.5vh;
     /* background-color: olive; */
 }
 
@@ -83,19 +85,19 @@ h3 img {
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    height: auto;
+    /* height: auto; */
 }
 
 .item {
     flex: 0 0 auto;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     width: auto;
     height: auto;
-    max-width: 180px;
+    max-width: 170px;
     max-height: 230px;
     text-align: justify;
     background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 1.5rem;
+    border-radius: 2rem;
     padding: 3vh;
     transition: 0.5s;
     position: absolute;
@@ -127,7 +129,7 @@ button.next {
 
 h5 {
     text-align: center;
-    font-size: 1rem; /* Base size */
+    font-size: .9rem; /* Base size */
     color: black;
 }
 
