@@ -268,7 +268,7 @@ h5 {
 }
 
 .rows h4 {
-    color: cad4df;
+    color: #A7A8AA;
     font-size: .8rem;
     /* background-color: palevioletred; */
 }
@@ -282,8 +282,13 @@ h5 {
     /* height: 5vh; */
     /* overflow: auto; */
     /* border-bottom: 1px solid #eee; */
-    /* background-color: gray; */
-    border-radius: 0vw;
+    background-color: #141414;
+    border-radius: 2vw;
+}
+
+.columns::after {
+    border-radius: 2vw;
+    background: conic-gradient(from var(--angle), white, blue, skyblue, black, white);
 }
 
 .columns h3 {
