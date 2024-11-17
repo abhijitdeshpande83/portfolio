@@ -76,7 +76,7 @@ class Project(models.Model):
     project_name = models.CharField(max_length=200, default='')
     timeline = models.CharField(max_length=20, default='', blank=True)
     project_description = models.TextField(default='',blank=True)
-    project_doc = models.ImageField(upload_to='projects', default='',blank=True)
+    project_doc = models.FileField(upload_to='projects', default='',blank=True)
     tools = models.CharField(max_length=100, default='', blank=True)
     link = models.CharField(max_length=200, default='', blank=True)
 

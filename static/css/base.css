@@ -113,6 +113,28 @@ body {
     font-size: 10px;
 }
 
+.nav-link {
+  position: relative;
+  display: inline-block;
+  color: white;
+  background-color: #141414;
+  /* background-color: red; */
+  text-decoration: none;
+  padding: 0.1rem 0.1rem;
+  border-radius: 5%;
+  transition: color 0.5s ease-in-out;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -1px; /* Adjust if needed */
+  border-radius: inherit;
+  background: conic-gradient(white var(--fill), transparent var(--fill));
+  transition: --fill 0.4s ease-in-out;
+}
+
 #contact-button {
     flex-direction: column;
     flex-wrap: wrap;
@@ -126,6 +148,7 @@ body {
 .navbar-toggler {
     background-color: white;
     border-radius: 1rem;
+    background-color: lightgrey;
     /* width: 25px;    */
     /* height: 25px;  */
 }
@@ -135,6 +158,7 @@ body {
     width: 3.5vw;   
     height: 2vh; 
     /* position: fixed; */
+    background-color: lightgrey;
 }
 
 }
