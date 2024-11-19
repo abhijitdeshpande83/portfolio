@@ -167,7 +167,7 @@ button {
     color: #fff;
     background-color: transparent;
     border: none;
-    font-size: xxx-large;
+    font-size: xx-large;
     font-family: monospace;
     font-weight: bold;
     cursor: pointer;
@@ -345,6 +345,76 @@ button {
     margin-top: .5vh;
     width: 60vw; /* Full width of the container */
     height: 20vh;
+    /* margin-bottom: -7vh; */
+    /* background-color: yellowgreen; */
+}
+
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 100%;
+    /* overflow: auto; */
+    /* width:fit-content; */
+    /* background-color: red; */
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    /* background-color: purple; */
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    height: 85vh;
+}
+
+.item {
+    /* width: auto;  */
+    /* height: auto;  */
+    max-width: 120px;
+    max-height: 150px;
+    padding: 2.5vh; /* Optionally reduce padding further */
+    border-radius: 1.2rem; /* Smaller border radius for mobile */
+    left: calc(50% - 7vw);
+}
+
+.slider-title h4 {
+    font-size: .85rem;
+}
+
+h5 {
+    font-size: .6rem; /* Base size */
+}
+
+button {
+    top: 42%;
+    font-size: .9rem;
+    margin-right: 2rem;
+    margin-left: -.5rem;
+}
+
+button.prev {
+    left: 5%;
+}
+
+button.next {
+    right: -3%;
+}
+
+.slider {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0vh;
+    width: 20vw; /* Full width of the container */
+    height: 45%;
     /* margin-bottom: -7vh; */
     /* background-color: orangered; */
 }
