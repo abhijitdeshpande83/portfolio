@@ -1,6 +1,7 @@
 .project {
     /* background-color: brown; */
     display: flex; 
+    flex-direction: column;
     padding: 0vw 2vh; 
     width: 100%;
     height: 100%;
@@ -21,6 +22,7 @@
 .project-view {
     /* background-color: bisque; */
     display: flex;
+    width: 100%;
     /* flex-direction: row; */
     /* justify-items: center; */
     justify-content: left;
@@ -40,6 +42,7 @@
 .project-name {
     /* padding: 0.52vw 2.60vh;  */
     display: flex; 
+    /* flex-direction: column; */
     /* background-color: red; */
     font-size: 1.1rem;
     color: #B0C4DE;
@@ -49,11 +52,16 @@
 }
 
 .project-description {
+    display: flex;
+    flex-direction: column;
     /* background-color: aqua; */
     padding: 0.52vw 2.60vh; 
+    width: 100%;
     margin: auto auto 3vh auto;
+    font-weight: lighter;
     font-size: 1rem;
     color: #A7A8AA;
+    word-wrap: break-word;
 }
 
 @media (max-width: 768px) {
