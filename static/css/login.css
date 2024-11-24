@@ -1,0 +1,111 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #001f3f, #004d4d); /* Darker Blue to Teal gradient */
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background-color: rgba(0, 0, 0, 0.85); /* Slightly darker container */
+    border-radius: 12px; /* Increased rounding for a smoother look */
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8); /* Stronger shadow for depth */
+    color: white;
+    animation: fadeIn 1s ease;
+    /* background-color: aquamarine; */
+    justify-content: center;
+}
+
+.login-container h2 {
+    font-size: 32px;
+    margin-bottom: 15px; /* Slightly less space below heading */
+    font-weight: 600; /* Bolder heading for emphasis */
+    /* text-transform: uppercase; */
+}
+
+.login-container p {
+    font-size: 14px; /* Slightly smaller text */
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 25px; /* Balanced space before form */
+    /* background-color: red; */
+}
+
+.form-group {
+    width: 100%;
+    margin: 15px 0; /* Adjusted spacing between form elements */
+    text-align: left;
+    /* background-color: red; */
+}
+
+.form-group input {
+    width: 85%; /* Reduced width for better alignment */
+    max-width: 320px; /* Slightly larger max width */
+    padding: 12px; /* Adjusted padding for comfort */
+    background-color: #1a1a1a; /* Slightly lighter background for contrast */
+    border: 1px solid #333; /* Subtle border */
+    border-radius: 8px; /* Softer edges */
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    display: block;
+}
+
+.form-group input:focus {
+    border-color: #004d4d; /* Teal focus color for better contrast */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 77, 77, 0.5); /* Glow effect */
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+.button-group a {
+    text-decoration: none;
+}
+
+.login-btn {
+    background-color: #003366; /* Dark Blue background */
+    border: none;
+    color: white;
+    padding: 12px;
+    flex: 1; /* Equal button size */
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.login-btn:hover {
+    background-color: #004d4d; /* Teal on hover */
+}
+
+.footer-text {
+    font-size: 13px; /* Smaller footer text */
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

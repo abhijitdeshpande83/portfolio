@@ -1,0 +1,107 @@
+/* Styles for Thank You Container */
+body {
+    background-color: #141414; 
+    color: #333;
+    font-family: 'Calibri', 'Arial', sans-serif;
+}
+
+.thank-you-container {
+    /* Flexbox to center content */
+    justify-items: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 1s ease-out; /* Apply fadeIn animation with 1s duration */
+}
+
+/* Thank You Text Container with Animation */
+.thank-you-text {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* Apply fadeIn animation */
+    animation: fadeIn 1s ease-out; 
+}
+
+.thank-you-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Styles for the Back Button Container */
+.back-btn-container {
+    display: flex;
+    text-align: center;
+    margin-top: .5vh;
+    align-items: center;
+    justify-content: center;
+    /* Optionally apply animation here if you want the button to fade in as well */
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Styles for the Button */
+.back-btn {
+    display: flex; /* Align icon and text */
+    align-items: center; /* Center-align the content */
+    background-color: transparent; 
+    color: white;
+    font-size: 1rem;
+    padding: 1vw 2vh; 
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    animation: fadeIn 1s ease-out; /* Apply fadeIn animation with 1s duration */
+}
+
+.home-btn-container a {
+    text-decoration: none;
+}
+
+.back-btn:hover {
+    background-color: #005599; /* Lighter blue on hover */
+}
+
+/* Styles for the Back Button Icon */
+.back-btn-img {
+    width: 50px; /* Size of the icon */
+    height: auto;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 768px) {
+
+.thank-you-text {
+    max-width: 80%;
+    max-height: 80%;
+    margin: 10vh auto;
+    /* background-color: blue; */
+    padding: 5vw;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* Apply fadeIn animation */
+    animation: fadeIn 1s ease-out; 
+}
+
+
+}
