@@ -7,11 +7,11 @@ body {
 }
 
 .container-fluid {
-    /* background-color: red; */
+    /* background-color: blue; */
     margin-left: 5vw;
-    margin-right: 20vw;
-    /* justify-content: space-around; */
-    /* align-items: center; */
+    /* margin-right: 20vw; */
+    justify-content: space-around;
+    align-items: center;
 }
 
 .navbar-brand img {
@@ -25,21 +25,10 @@ body {
     color: white; /* Text color */
 }
 
-/* .navbar-nav .nav-link {
-    color: white; 
-    font-size: 1.25rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover {
-    color: #f6f3fc; 
-    transform: scale(1.1);
-} */
-
 /* here code starts */
 .nav-link {
   position: relative;
-  display: inline-block;
+  display: flex;
   color: white;
   background-color: #141414;
   text-decoration: none;
@@ -64,7 +53,7 @@ body {
   content: "";
   position: absolute;
   z-index: -1;
-  inset: -1px; /* Adjust if needed */
+  inset: -1px;
   border-radius: inherit;
   background: conic-gradient(white var(--fill), transparent var(--fill));
   transition: --fill 0.6s ease-in-out;
@@ -81,12 +70,47 @@ body {
     border-radius: 20px;
     font-size: 1rem;
     border-width: 1px;
+    border-style: solid; /* Ensure the border has a style */
     border-color: white;
     transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
 }
 
 .navbar-nav #contact-button:hover {
     background-color: rgba(108, 117, 125, 0.7); /* Change transparency on hover */
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;
+    align-items: center;  
+    text-decoration: none;
+    margin-left: 10vw;
+    /* margin-top: .5vh; */
+    /* background-color: red; */
+    margin-right: -5vw;
+}
+
+.navbar a {
+    text-decoration: none; 
+    border: none;           
+}
+
+#admin-icon {
+    font-size: 1.8rem;
+    height: auto;
+    color: white;
+}
+
+#admin-icon:hover {
+    color: rgb(255, 255, 255, 0.7); 
+}
+
+.login-text {
+    margin-top: 0; /* Adds space between the logo and text */
+    font-size: .8rem;  /* Adjust the size of the text */
+    font-weight: lighter;
+    color:white;  /* Text color, you can adjust to match your design */
 }
 
 @media (max-width: 768px) {
@@ -141,6 +165,7 @@ body {
     margin-top: .5%;
     border-radius: 20px;
     border-width: 1px;
+    border-color: white;
     padding: .1vh 1vw;
     font-size: .5rem;
 }
@@ -161,4 +186,15 @@ body {
     background-color: lightgrey;
 }
 
+.login-container {
+    display: none;
+    flex-direction: column;   
+    /* justify-content: center; */
+    justify-items: flex-end;
+    align-items: center;  
+    text-decoration: none;
+    margin-top: 0vh;
+    /* background-color: red; */
+    margin-right: 0vw;
+}
 }

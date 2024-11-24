@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, FileResponse, Http404
 from .models import Certification, Tool, Experience, Skill, ProfileAsset, Project
 from django.urls import reverse_lazy
@@ -6,6 +6,9 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.views.generic.edit import FormView
 from .forms import ContactForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate, login
+
 import os
 
 # Create your views here.
@@ -14,6 +17,19 @@ def index(request):
     profile_data = ProfileAsset.objects.all().first()
     return render(request, 'index.html',{'profile_data': profile_data})
 
+
+def admin_login(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            # Authenticate and log the user in
+            user = form.get_user()
+            login(request, user)
+            return redirect('/admin/')  # Redirect to admin page
+    else:
+        form = AuthenticationForm()
+
+    return render(request, 'login.html', {'form': form})
 
 def project(request):
     projects = Project.objects.all().order_by('project_number')
