@@ -2,7 +2,7 @@ from django.urls import path
 from .views import ContactFormView, project, experience, skills, thankyou, download_cv, admin_login 
 
 urlpatterns = [
-    path('contact-me/',ContactFormView.as_view(), name='contact_me'),
+    path('contact_me/',ContactFormView.as_view(), name='contact_me'),
     path('projects/', project, name='project'),
     path('experience/', experience, name='intro'),
     path('skills/', skills, name='skills'),

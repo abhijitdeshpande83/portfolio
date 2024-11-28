@@ -51,6 +51,9 @@ def skills(request):
     return render(request, 'skills.html', params)
 
 def thankyou(request):
+    if not request.session.get('form_submitted', False):
+        return redirect('contact_me')
+    del request.session['form_submitted'] 
     return render(request, 'thankyou.html')
 
 class ContactFormView(FormView):
@@ -104,6 +107,9 @@ class ContactFormView(FormView):
                 fail_silently=False,
                 html_message=message  # This parameter allows HTML content
             )
+
+            self.request.session['form_submitted'] = True
+
             return super().form_valid(form)
         else:
             # Print or log form errors
