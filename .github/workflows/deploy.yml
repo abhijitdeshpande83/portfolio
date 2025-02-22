@@ -1,0 +1,28 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main  # or any other branch you use
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}  # Add SSH private key to GitHub Secrets
+
+      - name: Deploy to EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no ubuntu@52.54.48.37 << 'EOF'
+            cd /home/ubuntu/portfolio  # Navigate to your project folder
+            git pull origin main  # Pull the latest changes from GitHub
+            # Restart Gunicorn and NGINX
+            sudo systemctl restart gunicorn
+            sudo systemctl restart nginx
+          EOF
