@@ -12,4 +12,6 @@ __pycache__/
 
 dump.sql
 migrate.load
-
+.DS_Store
+db.json
+db.sqlite3
