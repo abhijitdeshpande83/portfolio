@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.Removedql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': config('DB_NAME'),  # Default to 'Removed' if not set
         'USER': config('DB_USER'),  # Default to your user
         'PASSWORD': config('DB_PASSWORD'),  # Default to your password
