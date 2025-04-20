@@ -3,7 +3,8 @@
 .env
 
 # Ignore Python cache
-__pycache__/
+**/__pycache__/
+*.py[cod]
 
 # Ignore Django migrations
 */migrations/*
