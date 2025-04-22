@@ -7,16 +7,34 @@
 
 {% block body %}
 <div class="project">
-    <div class="project-details">
-    {% for i in projects %}
-        <div class="project-view">
-            <h1 class="project-name">{{ i.project_name }}</h1>
-            {% if i.link %}
-                <a class="btn btn-primary" href="{{ i.link }}" role="button" id="detail-view" target="_blank" rel="noopener noreferrer">view</a>
+    {% for category, project_list in grouped_projects.items %}
+      <div class="project-category">
+        <h1 class="category">{{ category|default:"Uncategorized" }}</h1>
+  
+        {% for project in project_list %}
+            {% if forloop.first or forloop.counter0|divisibleby:3 %}
+            <div class="project-row">
             {% endif %}
-        </div>
-        <h6 class="project-description">{{ i.project_description|safe }}</h6>
+  
+                <div class="project-column">
+                     <div class="project-card">
+                        <div class="front-card">
+                            <h3 class="project-name">{{ project.project_name }}</h3>
+                        </div>    
+                        <div class="back-card">
+                            <h6 class="project-description ">{{ project.project_description }}</h6>
+                        </div>
+                    </div>
+                </div>
+  
+            {% if forloop.counter|divisibleby:3 or forloop.last %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
     {% endfor %}
-    </div>  
-</div>
+  </div>
+   
+<script src="{% static 'projects.js' %}"></script>
+
 {% endblock %}

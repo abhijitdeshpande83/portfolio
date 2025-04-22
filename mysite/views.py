@@ -32,9 +32,15 @@ def admin_login(request):
     return render(request, 'login.html', {'form': form})
 
 def project(request):
-    projects = Project.objects.all().order_by('project_number')
+    list_of_projects = Project.objects.all().order_by('project_number')
+
+    grouped_projects = {}
+    for project in list_of_projects:
+        if project.project_category not in grouped_projects:
+            grouped_projects[project.project_category] = []
+        grouped_projects[project.project_category].append(project)
     
-    return render(request, 'projects.html', {'projects': projects})
+    return render(request, 'projects.html', {'grouped_projects':grouped_projects})
 
 def contact_me(request):
     return render(request, 'contact_me.html')

@@ -73,6 +73,7 @@ class ProfileAsset(models.Model):
 
 class Project(models.Model):
     project_number = models.IntegerField(default='99',blank=True)
+    project_category = models.CharField(max_length=50, default='', blank=True)
     project_name = models.CharField(max_length=200, default='')
     timeline = models.CharField(max_length=20, default='', blank=True)
     project_description = models.TextField(default='',blank=True)
