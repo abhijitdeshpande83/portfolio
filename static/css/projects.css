@@ -12,7 +12,7 @@
 
 .project-category {
     /* background-color: palevioletred; */
-    padding: 2vw 3vh;
+    padding: 1vw 1vh;
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -21,10 +21,12 @@
 }
 
 .category {
-    color: #B0C4DE;;
+    color: lightskyblue;;
     /* background-color: red; */
     text-align: left;
     width: 90%;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .project-row {
@@ -41,17 +43,20 @@
     margin: 1vw 1vw 1vw 1vw;
     height: 24vh;
     /* border-bottom: 1px solid #eee; */
-    background-color: black;
+    background-color: #fdfcfb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     border-radius: 1vw;
     align-content: center;
-    overflow: hidden; 
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid transparent; 
 }
 
 .project-name {
     /* padding: 0.52vw 2.60vh;  */
     /* background-color: red; */
     font-size: 1.25rem;
-    color: white;
+    color: #1a1a1a;
     padding: 2.5vw;
 }
 
@@ -66,11 +71,11 @@
     width: 100%;
     padding: .55vw;
     overflow: auto; 
-    color: white;
+    color: #1a1a1a;
 }
 
 .project-column:hover {
-    background-color: white;
+    background-color: #f2f0eb;
 }
 
 .project-column:hover .project-name {
@@ -86,14 +91,6 @@
     transform-style: preserve-3d;
     transition: transform 0.6s;
   }
-
-.front-card {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
-}
 
 .project-column.flipped .project-card {
     transform: rotateY(180deg);
