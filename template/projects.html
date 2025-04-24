@@ -22,7 +22,11 @@
                             <h3 class="project-name">{{ project.project_name }}</h3>
                         </div>    
                         <div class="back-card">
-                            <h6 class="project-description ">{{ project.project_description }}</h6>
+                            {% if project.link %}
+                            <a href="{{ project.link }}" target="_blank" class="project-button ">View</a>
+                            {% else %}
+                            <h6 class="project-description">{{ project.project_description }}</h6>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
