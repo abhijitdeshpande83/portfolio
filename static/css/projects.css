@@ -156,51 +156,71 @@
     align-items: center; 
 }
 
-.project-details {
-    /* background-color: blueviolet; */
-    padding: 2vw 2vh;
+.project-category {
+    /* background-color: palevioletred; */
+    padding: 1vw 1vh;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     height: 100%;
+    align-items: center;
 }
 
-.project-view {
-    /* background-color: magenta; */
+.category {
+    color: lightskyblue;;
+    /* background-color: red; */
+    text-align: left;
+    width: 90%;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.project-row {
+    /* background-color: greenyellow; */
     display: flex;
-    /* flex-direction: row; */
-    /* justify-items: center; */
-    justify-content: left;
-    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: flex-start;
+}
+
+.project-column {
+    flex: 80%;
+    flex-wrap: wrap;
+    margin: 1vw 1vw 1vw 1vw;
+    height: 20vh;
+    /* border-bottom: 1px solid #eee; */
+    background-color: #fdfcfb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 4vw;
+    align-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid transparent; 
 }
 
 .project-name {
     /* padding: 0.52vw 2.60vh;  */
-    display: flex; 
     /* background-color: red; */
-    font-size: .9rem;
-    color: #B0C4DE;
-    margin-right: 1vw;
-    /* align-items: flex-start; */
-    /* margin: auto auto 0 auto; */
+    font-size: 1.25rem;
+    font-weight:bold ;
+    color: #1a1a1a;
+    padding: 3.5vw;
 }
-
 
 .project-description {
-    padding: 4vw 4vw;
-    font-size: 0.8125rem;
-    color: #A7A8AA;
+    /* background-color: aqua; */
+    display: flex;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    justify-items: center;
+    align-items: center;
+    height: 20vh;
+    font-size: 2.8vw;
+    width: 100%;
+    padding: 1vw;
+    overflow: auto; 
+    color: #1a1a1a;
 }
 
-#detail-view {
-    background-color: grey;
-    display: flex;
-    padding: auto;
-    width: 3vw;
-    height: 3vh;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
-}
 
 }
