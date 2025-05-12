@@ -133,7 +133,7 @@ def download_cv(request):
         file_path = resume.resume_file.path
         file_name = resume.resume_file.name
         _, file_extension = os.path.splitext(file_name) 
-        return FileResponse(open(file_path, 'rb'), as_attachment=True, filename=f"{"Abhijit_Deshpande_Resume"}{file_extension}")
+        return FileResponse(open(file_path, 'rb'), as_attachment=True, filename=f"Abhijit_Deshpande_Resume{file_extension}")
     else:
         raise Http404("Resume file not found.")
 

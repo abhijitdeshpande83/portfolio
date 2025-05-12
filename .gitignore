@@ -1,6 +1,8 @@
-
 # Ignore the .env file
-.env
+.env.*
+
+# Ignore site-packages directory
+**/site-packages/
 
 # Ignore Python cache
 **/__pycache__/
