@@ -12,7 +12,6 @@ pillow==10.3.0
 psycopg2-binary==2.9.9
 pycparser==2.22
 python-dateutil==2.8.2
-python-decouple==3.8
 python-dotenv==1.0.1
 pytz==2024.2
 setuptools==68.2.2

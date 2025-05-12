@@ -1,6 +1,6 @@
 
 # Ignore the .env file
-.env
+.env.*
 
 # Ignore Python cache
 **/__pycache__/

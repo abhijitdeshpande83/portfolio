@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-from decouple import config
+from dotenv import load_dotenv
+load_dotenv('.env.main')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -88,11 +89,11 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),  # Default to 'Removed' if not set
-        'USER': config('DB_USER'),  # Default to your user
-        'PASSWORD': config('DB_PASSWORD'),  # Default to your password
-        'HOST': config('DB_HOST'),  # Default to your host
-        'PORT': config('DB_PORT'),  # Default to your port
+        'NAME': os.getenv('DB_NAME'),  # Default to 'Removed' if not set
+        'USER': os.getenv('DB_USER'),  # Default to your user
+        'PASSWORD': os.getenv('DB_PASSWORD'),  # Default to your password
+        'HOST': os.getenv('DB_HOST'),  # Default to your host
+        'PORT': os.getenv('DB_PORT'),  # Default to your port
     }
 }
 
@@ -102,8 +103,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')  # Get the email from .env
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')  # Get the password from .env
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')  # Get the email from .env
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')  # Get the password from .env
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
