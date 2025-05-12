@@ -2,6 +2,9 @@
 # Ignore the .env file
 .env.*
 
+# Ignore site-packages directory
+**/site-packages/
+
 # Ignore Python cache
 **/__pycache__/
 *.py[cod]
