@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelliQA</title>
+</head>
+<body>
+    <form action="{% url 'test' %}" method="post">
+        {% csrf_token %}
+        <label for="question">Ask me!</label><br>
+        <input type="text" id="question" name="question">
+        <label for="document">Choose a document:</label>
+        <input type="file" name="document" id="document">
+        <button type="submit">Upload</button>
+        <button type="submit">Submit</button>
+    </form>
+        <h3>Here is your answer:</h3>
+        <h5>{{answer}}</h5>
+</body>
+</html>

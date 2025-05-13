@@ -15,16 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from mysite import views
+from mysite import mysite_views
+from NLPGenHub import NLPGenHub_views
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.index, name='index'),
+    path('',mysite_views.index, name='index'),
     
     # Include the app’s URL patterns
-    path('mysite/', include('mysite.urls')),  
+    path('mysite/', include('mysite.mysite_urls')),  
+    path('projects/', include('NLPGenHub.NLPGenHub_urls')),  
 ]
 
 if settings.DEBUG:

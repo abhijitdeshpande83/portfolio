@@ -2,6 +2,14 @@
 # Ignore the .env file
 .env.*
 
+# Ignore venv
+venv*
+
+# Ignore large files
+*.dylib
+*.bin
+*.h5
+
 # Ignore site-packages directory
 **/site-packages/
 
