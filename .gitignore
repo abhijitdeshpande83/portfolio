@@ -1,6 +1,9 @@
 # Ignore the .env file
 .env.*
 
+# Ignore venv
+venv*
+
 # Ignore site-packages directory
 **/site-packages/
 
