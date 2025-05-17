@@ -3,18 +3,16 @@ from django.shortcuts import render
 from rag_pipeline import load_data, vectorstore, ask_question
 from .forms import UploadFileForm
 from .models import QueryData
+import hashlib
+import os
 
+def get_file_hash(file_obj):
+    sha256 = hashlib.sha256()
+    for chunk in file_obj.chunks():
+        sha256.update(chunk)
 
-def upload_file(request):
-    if request.method=='POST':
-        form = UploadFileForm(request.POST, request.FILES)
-        file = request.FILES.get('query_file')
-        form_data = QueryData.objects.create(query_file=file)
-        form_data.save()
-        return HttpResponse("Successfully uploaded file")
-    else:
-        form = UploadFileForm()
-    return render(request, 'upload_file.html', {'form':form})
+    return sha256.hexdigest()
+
 
 def test(request):
 
@@ -23,28 +21,33 @@ def test(request):
     session_id = request.session.session_key
     print(f"Session_id:", session_id)
 
-    form = UploadFileForm()
-
     if request.method=='POST':
-        form = UploadFileForm(request.POST, request.FILES)
+        form = UploadFileForm(request.POST, request.FILES) #Instantiate the Django form 
         file = request.FILES.get('query_file')
         query=request.POST.get('question')
 
         if file:
-            form_data = QueryData.objects.create(query_file=file)
+            file_hash = get_file_hash(file)
+            if QueryData.objects.filter(file_hash=file_hash).exists():
+                return render(request, "intelliqa.html", {'form':form,
+                    'answer':f"Duplicate file detected, file named \
+                    already present"})
+            
+            form_data = QueryData.objects.create(query_file=file, file_hash=file_hash)
             form_data.save()
-            print('Successfully uploaded!')
-            raw_text = load_data(path='media/NLP_data')
-            vectorstore_db = vectorstore(raw_text)
+            file_path = 'media/NLP_data/' + os.path.basename(form_data.query_file.name)
+            print(f"File path------->:",file_path)
+            raw_text = load_data(file_path)
+            vectorstore_db = vectorstore(persist_directory='media/NLP_data/chroma_db',texts=raw_text)
             return render(request, "intelliqa.html", {'form':form})
         
         elif query:
-            raw_text = load_data(path='media/NLP_data')
-            vectorstore_db = vectorstore(raw_text)
+            vectorstore_db = vectorstore(persist_directory='media/NLP_data/chroma_db')
             response = ask_question(query,vectorstore_db)
             return render(request, 'intelliqa.html', {'answer':response,'form':form})
         else:
             return render(request, 'intelliqa.html', {'answer':"Please enter your question"})
     
-
+    else:
+        form = UploadFileForm()
     return render(request, "intelliqa.html", {'form':form})
