@@ -22,9 +22,9 @@ def test(request):
     print(f"Session_id:", session_id)
 
     if request.method=='POST':
-        form = UploadFileForm(request.POST, request.FILES) #Instantiate the Django form 
-        file = request.FILES.get('query_file')
-        query=request.POST.get('question')
+        form = UploadFileForm(request.POST, request.FILES)          #Instantiate the Django form 
+        file = request.FILES.get('query_file')                      #Upload file 
+        query=request.POST.get('question')                          # User question    
 
         if file:
             file_hash = get_file_hash(file)
@@ -46,7 +46,7 @@ def test(request):
             response = ask_question(query,vectorstore_db)
             return render(request, 'intelliqa.html', {'answer':response,'form':form})
         else:
-            return render(request, 'intelliqa.html', {'answer':"Please enter your question"})
+            return render(request, 'intelliqa.html', {'answer':"Please enter your question",'form':form})
     
     else:
         form = UploadFileForm()
