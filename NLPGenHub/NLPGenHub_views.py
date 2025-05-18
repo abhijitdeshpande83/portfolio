@@ -13,7 +13,6 @@ def get_file_hash(file_obj):
 
     return sha256.hexdigest()
 
-
 def test(request):
 
     if not request.session.session_key:
@@ -29,14 +28,15 @@ def test(request):
         if file:
             file_hash = get_file_hash(file)
             if QueryData.objects.filter(file_hash=file_hash).exists():
+                duplicate_file = QueryData.objects.get(file_hash=file_hash)
                 return render(request, "intelliqa.html", {'form':form,
-                    'answer':f"Duplicate file detected, file named \
-                    already present"})
+                    'answer':f"Duplicate file detected, \
+                        file named {os.path.basename(duplicate_file.query_file.name)} \
+                            already present in the system."})
             
             form_data = QueryData.objects.create(query_file=file, file_hash=file_hash)
             form_data.save()
             file_path = 'media/NLP_data/' + os.path.basename(form_data.query_file.name)
-            print(f"File path------->:",file_path)
             raw_text = load_data(file_path)
             vectorstore_db = vectorstore(persist_directory='media/NLP_data/chroma_db',texts=raw_text)
             return render(request, "intelliqa.html", {'form':form})
