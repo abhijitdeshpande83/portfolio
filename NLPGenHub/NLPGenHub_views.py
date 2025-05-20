@@ -28,7 +28,7 @@ def test(request):
         if file:
             file_hash = get_file_hash(file)
             if QueryData.objects.filter(file_hash=file_hash).exists():
-                duplicate_file = QueryData.objects.get(file_hash=file_hash)
+                duplicate_file = QueryData.objects.get(file_hash=file_hash)    #fetching model instance QueryData
                 return render(request, "intelliqa.html", {'form':form,
                     'answer':f"Duplicate file detected, \
                         file named {os.path.basename(duplicate_file.query_file.name)} \
