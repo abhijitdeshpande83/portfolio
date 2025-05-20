@@ -1,3 +1,6 @@
+#Ignore NLP_data
+/media/NLP_data/**
+
 
 # Ignore the .env file
 .env.*
