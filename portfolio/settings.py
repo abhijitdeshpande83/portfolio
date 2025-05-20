@@ -155,3 +155,9 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+### Redis Configuration ###
+
+CELERY_BROKER_URL = 'redis://default:cEudrJkpTfaaPhiEfAhOkkISximMMPPE@shinkansen.proxy.rlwy.net:40689'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'

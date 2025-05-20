@@ -17,7 +17,7 @@ def test(request):
 
     if not request.session.session_key:
         request.session.create()
-    session_id = request.session.session_key
+    session_id = request.session.session_key 
     print(f"Session_id:", session_id)
 
     if request.method=='POST':
