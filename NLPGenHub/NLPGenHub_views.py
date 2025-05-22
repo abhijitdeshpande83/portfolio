@@ -42,6 +42,8 @@ def test(request):
             return render(request, "intelliqa.html", {'form':form})
         
         elif query:
+            if not os.path.exists('media/NLP_data/chroma_db'):
+                return render(request, 'intelliqa.html', {'answer':"No file uploaded. Please upload a file to proceed.", 'form':form})
             vectorstore_db = vectorstore(persist_directory='media/NLP_data/chroma_db')
             response = ask_question(query,vectorstore_db)
             return render(request, 'intelliqa.html', {'answer':response,'form':form})
