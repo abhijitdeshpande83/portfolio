@@ -25,4 +25,4 @@ class ResourceCleanupLog(models.Model):
     def __str__(self):
         uploaded_at_cst =  self.uploaded_at.astimezone(ZoneInfo('America/Chicago'))
         file_name = os.path.basename(self.file_name)
-        return f"{file_name} uploaded at {uploaded_at_cst.strftime('%H:%M:%S %m-%d-%Y')}"
+        return f"{file_name} uploaded at {uploaded_at_cst.strftime('%H:%M:%S %m/%d/%Y')}"
