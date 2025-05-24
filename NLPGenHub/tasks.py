@@ -21,17 +21,17 @@ def cleanup_task(expiration_minutes=1):
             file_name = os.path.basename(data.query_file.name)
             uploaded_at = data.timestamp
             data.query_file.delete(save=False)          # Delete the actual file from server's filesystem
-        
-        data.delete()                                   # Delete record from DB (path reference)
-        
-        print(f"[DEBUG] Deleted file: {file_name}")
-        ResourceCleanupLog.objects.create(
+
+            ResourceCleanupLog.objects.create(
             file_name=file_name,
             uploaded_at=uploaded_at,
             session_id=None,
             )
+            print(f"[DEBUG] Deleted file: {file_name}")
+            file_name, uploaded_at = None, None
+        
+        data.delete()                                   # Delete record from DB (path reference)        
     
-    file_name, uploaded_at = None, None
 
     print("[INFO] File cleanup completed.")
 
