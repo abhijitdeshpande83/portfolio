@@ -18,7 +18,7 @@ def cleanup_task(expiration_minutes=1):
 
     for data in expired_data:
         if data.query_file and os.path.exists(data.query_file.path):
-            file_name = data.query_file.name
+            file_name = os.path.basename(data.query_file.name)
             uploaded_at = data.timestamp
             data.query_file.delete(save=False)          # Delete the actual file from server's filesystem
         
