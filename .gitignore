@@ -30,3 +30,10 @@ migrate.load
 .DS_Store
 db.json
 db.sqlite3
+
+
+# Celery local beat state file
+celerybeat-schedule
+celerybeat.pid
+ping
+
