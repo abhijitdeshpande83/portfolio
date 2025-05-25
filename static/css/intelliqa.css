@@ -1,0 +1,110 @@
+.chatbot {
+    background-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    line-height: 1.5;
+    justify-items: center;
+    height: 95vh;
+}
+
+h1 {
+    margin-top: 2vh;
+    color: black;
+}
+ 
+.chatbot-response {
+    /* background-color: greenyellow; */
+    max-width: 80%;
+    color: black;
+    border-radius: 16px;
+    padding: 12px 16px;
+    font-size: medium;
+    line-height: 1.5;
+    margin: 20px auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 90%;
+    color: black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    justify-content: space-between;
+    align-items: center;
+    height: 90%;
+}
+
+input[type="submit"],
+button{
+    display: flex;
+    margin: 10px auto;
+    padding: 6px 8px;
+    width: 25%;
+    border: 1px solid #ccc;
+    background-color: #3498db;
+    color: white;
+    border: none;   
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color .3s ease;
+}
+
+.file-upload {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: green; */
+    align-items: center;
+    padding: 2px;
+    width: 20vw;
+    gap: .5vw;
+}
+
+.file-upload input[type="file"] {
+    background-color: white;
+    width: 75%;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.question {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin: 15px auto;
+    padding: 5px;
+    width: 70%;
+    align-items: center;
+    /* background-color: blue; */
+}
+.question button {
+    width: 7%;
+    background-color: transparent;
+    color: white;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    justify-content: center;
+}
+.question textarea{
+    flex: 1;
+    font-size: 1.8vh;
+    padding: 8px 12px;
+    resize: none;
+    overflow: hidden;
+    border-radius: 10px;
+    max-height: 200px;
+    line-height: 1.5;
+}
+
+.question .btn-btn-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contains;
+}

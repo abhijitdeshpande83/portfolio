@@ -1,10 +1,16 @@
+#Ignore NLP_data
+/media/NLP_data/**
+
 # Ignore the .env file
-.env.*
-#Ignore .env
 .env.*
 
 # Ignore venv
 venv*
+
+# Ignore large files
+*.dylib
+*.bin
+*.h5
 
 # Ignore site-packages directory
 **/site-packages/
@@ -23,3 +29,10 @@ migrate.load
 .DS_Store
 db.json
 db.sqlite3
+
+
+# Celery local beat state file
+celerybeat-schedule
+celerybeat.pid
+ping
+
