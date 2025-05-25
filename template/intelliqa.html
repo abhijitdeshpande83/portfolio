@@ -4,24 +4,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/intelliQA.css' %}">
+    <link rel="stylesheet" href="{% static 'css/intelliqa.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IntelliQA</title>
 </head>
 <body>
-    <h1>Hello, Welcome In!</h1>
-    <form action="{% url 'test' %}" method="post" enctype="multipart/form-data"> 
-        {% csrf_token %}
-        <p>{{ form.query_file }}</p>
-        <input type="submit" value="Upload" id="">
-    </form>
-    <form action="{% url 'test' %}" method="post">
-        {% csrf_token %}
-        <label for="question">Ask me!</label><br>
-        <input type="text" id="question" name="question">
-        <button type="submit">Submit</button>
-    </form>
-        <h3>Here is your answer:</h3>
-        <h5>{{answer}}</h5>
+    <div class="chatbot">
+        <h1>Welcome In!</h1>
+
+            <form action="{% url 'test' %}" method="post" enctype="multipart/form-data"> 
+                {% csrf_token %}
+                <div class="file-upload">
+                        {{ form.query_file }}   
+                    <input type="submit" value="Upload">
+                </div>
+                
+                <div class="chatbot-response">
+                    {{ answer }}
+                </div>
+      
+                <div class="question">
+                    <textarea name="question" placeholder="Ask your question here....." rows=1></textarea>
+                    <button type="submit">
+                        <img src="{% static 'project_data/send.png' %}" alt="Send" class="back-btn-img">
+                    </button>
+                </div>
+            </form>
+          
+    </div>
 </body>
 </html>
