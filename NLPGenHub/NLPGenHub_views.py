@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from rag_pipeline import load_data, vectorstore, ask_question
 from .forms import UploadFileForm
@@ -34,16 +34,25 @@ def test(request):
                         file named {os.path.basename(duplicate_file.query_file.name)} \
                             already present in the system."})
             
+            request.session['file_count'] = request.session.get('file_count', 0)
+
+            if (request.session['file_count']) > 4:
+                return render(request, 'intelliqa.html',\
+                              {'answer':"Upload limit of 5 files reached for this session.", 'form':form})
+            
             form_data = QueryData.objects.create(query_file=file, file_hash=file_hash)
             form_data.save()
             file_path = 'media/NLP_data/' + os.path.basename(form_data.query_file.name)
+        
+            request.session['file_count'] += 1
+    
             raw_text = load_data(file_path)
             vectorstore_db = vectorstore(persist_directory='media/NLP_data/chroma_db',texts=raw_text)
             return render(request, "intelliqa.html", {'form':form})
         
         elif query:
             if not os.path.exists('media/NLP_data/chroma_db'):
-                return render(request, 'intelliqa.html', {'answer':"No file uploaded. Please upload a file to proceed.", 'form':form})
+                return render(request, 'intelliqa.html', {' answer':"No file uploaded. Please upload a file to proceed.", 'form':form})
             vectorstore_db = vectorstore(persist_directory='media/NLP_data/chroma_db')
             response = ask_question(query,vectorstore_db)
             return render(request, 'intelliqa.html', {'answer':response,'form':form})
