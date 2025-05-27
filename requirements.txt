@@ -42,8 +42,6 @@ filelock==3.18.0
 flatbuffers==25.2.10
 frozenlist==1.6.0
 fsspec==2025.5.1
-google-auth==2.40.2
-googleapis-common-protos==1.70.0
 grpcio==1.71.0
 gunicorn==23.0.0
 h11==0.16.0
@@ -149,7 +147,7 @@ tika==3.1.0
 tiktoken==0.9.0
 tokenizers==0.21.1
 tomli==2.2.1
-torch==2.7.0
+torch==2.7.0+cpu
 tqdm==4.67.1
 transformers==4.52.3
 typer==0.15.4
