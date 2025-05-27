@@ -1,6 +1,6 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
-from rag_pipeline import load_data, vectorstore, ask_question
+from rag_pipeline.query_engine import load_data, vectorstore, ask_question
 from .forms import UploadFileForm
 from .models import QueryData
 import hashlib

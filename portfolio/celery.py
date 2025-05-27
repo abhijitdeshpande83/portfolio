@@ -13,12 +13,6 @@ app = Celery('portfolio')
 #   should have a `CELERY_` prefix.
 app.config_from_object('django.conf:settings', namespace='CELERY')
 
-# app.conf.beat_schedule = {
-#     'test2':{
-#         'task': 'NLPGenHub.tasks.test_task',
-#         'schedule': crontab(minute='*/1'),
-#     }
-# }
 
 # Load task modules from all registered Django apps.
 app.autodiscover_tasks()

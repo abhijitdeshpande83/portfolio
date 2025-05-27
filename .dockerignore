@@ -1,0 +1,35 @@
+# Ignore Python virtual environments
+venv/
+venv-main/
+env/
+__pycache__/
+
+# Python artifacts
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Build artifacts
+*.egg-info/
+build/
+dist/
+
+# Git and version control
+.git/
+.gitignore
+
+# System files
+.DS_Store
+.env
+*.swp
+
+# Docker files themselves (optional)
+Dockerfile
+.dockerignore
+
