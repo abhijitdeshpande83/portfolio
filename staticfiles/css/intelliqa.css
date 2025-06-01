@@ -83,7 +83,6 @@ button{
     align-items: center;
     /* background-color: blue; */
 }
-
 .question button {
     width: 7%;
     background-color: transparent;
@@ -93,7 +92,6 @@ button{
     text-align: center;
     justify-content: center;
 }
-
 .question textarea{
     flex: 1;
     font-size: 1.8vh;
@@ -109,57 +107,4 @@ button{
     width: 40px;
     height: 40px;
     object-fit: contains;
-}
-
-@media (max-width: 768px) {
-
-.file-upload {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    /* background-color: green; */
-    align-items: center;
-    padding: 1px;
-    width: 75vw;
-    gap: 1vw;
-}
-
-.question {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    margin: 10px auto;
-    padding: 2px;
-    width: 90%;
-    align-items: center;
-    /* background-color: blue; */
-}
-
-.question textarea{
-    flex: 1;
-    font-size: 1.8vh;
-    padding: 6px 8px;
-    resize: none;
-    overflow: hidden;
-    border-radius: 8px;
-    max-height: 100px;
-    line-height: 1.2;
-}
-
-.question button {
-    width: 10%;
-    background-color: transparent;
-    color: white;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    justify-content: center;
-}
-
-
-.question .btn-btn-img {
-    width: 25px;
-    height: 25px;
-}
-
 }

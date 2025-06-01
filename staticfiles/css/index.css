@@ -9,7 +9,6 @@
     margin-top: 2vw;
     display: flex;
     flex-direction: row;
-    color: rgb(186, 178, 167);
     justify-content: space-around;
     /* background-color: red; */
 }
@@ -18,7 +17,7 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
-    padding: 30px;
+    padding: 2vw 3vh;
     width: 50vw;
     /* background-color: yellow; */
 }
@@ -40,9 +39,9 @@
 
 .introduction {
     margin-top: 0;
-    font-size: 20px;
-    font-weight: bold;
-    color: #A7A8AA;
+    font-size: 1.25rem;
+    /* font-weight: bold; */
+    color: #cad4df;
     /* background-color: beige; */
 }
 
@@ -63,24 +62,80 @@
     color: rgba(96,165,250,255);
 }
 
-.about {
-    font-size: 20px;
-}
-.more-about {
-    font-size: 15px;
-}
-
 .buttons button {
     position: relative;
-    margin-top: 15px;
-    padding: 10px 10px;
-    font-size: 14px;
-    background-color: green;
-    border-radius: 15px;
+    margin-top: 2vh;
+    padding: 1.2vh .5vw;
+    font-size: .9rem;
+    background-color: #1E90FF;
+    border-radius: 1rem;
     transition: background-color 0.3s ease;
 }
 
 .buttons button:hover {
     background-color: white;
-    color: green;
+    color: #1E90FF;
 }
+
+@media (max-width: 768px) {
+
+.container-index {
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    /* padding: 1vw 1vw;  */
+    color: white;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 90vh;
+    align-items: center;
+    justify-content: flex-start;
+    /* justify-content: space-around; */
+    /* background-color: yellow; */
+}
+
+.hello {
+    font-size: 7vw;
+    font-weight: bold;
+    color: white;
+    /* background-color: orange; */
+}
+.name {
+    font-size: 7vw;
+}
+.personal-info {
+    padding: 3vw 3vh;
+    width: 90vw;
+    /* background-color: red; */
+}
+
+.introduction {
+    font-size: 1rem;
+}
+
+.buttons button {
+    margin-top: 1.2vh;
+    padding: .4vh .7vw;
+    font-size: .8rem;
+    background-color: #1E90FF;
+    border-radius: .5rem;
+}
+
+.personal-pic {
+    margin-top: 1.5vh;
+    width: 100vw;
+    /* background-color: blue; */
+}
+
+.personal-pic img{
+    width: 60vw;
+    border-radius: 1em;
+}
+
+}
+    

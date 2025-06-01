@@ -7,10 +7,10 @@ body {
 }
 
 .container-fluid {
-    /* background-color: red; */
+    /* background-color: blue; */
     margin-left: 5vw;
-    margin-right: 20vw;
-    justify-content: center;
+    /* margin-right: 20vw; */
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -21,37 +21,180 @@ body {
 }
 
 .brand-text {
-    font-size: 20px; /* Adjust font size */
+    font-size: 1.25rem; /* Adjust font size */
     color: white; /* Text color */
 }
 
-
-.navbar-nav .nav-link {
-    color: white; /* Default text color */
-    font-size: 22px;
-    transition: color 0.3s ease, transform 0.3s ease;
+/* here code starts */
+.nav-link {
+  position: relative;
+  display: flex;
+  color: white;
+  background-color: #141414;
+  text-decoration: none;
+  padding: 0.5rem .5rem;
+  border-radius: 10%;
+  transition: color 0.5s ease-in-out;
 }
 
-.navbar-nav .nav-link:hover {
-    color: #f6f3fc; /* Change text color on hover */
-    transform: scale(1.1); /* Slightly enlarge the text */
+@property --fill {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 0%;
 }
 
+.nav-link:hover {
+  color: white; /* Change the text color on hover */
+  /* background-color: grey; */
+  --fill: 100%; /* Trigger the animation */
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(white var(--fill), transparent var(--fill));
+  transition: --fill 0.6s ease-in-out;
+}
 
 .navbar-brand:hover img {
     transform: scale(1.2); /* Slightly enlarge the logo */
 }
 
-.contact-button {
-    /* margin-top: .5%; */
+#contact-button {
     background-color: transparent;
-    margin-top: .35%;
+    padding: .7vh .7vw;
+    margin-top: 5%;
     border-radius: 20px;
+    font-size: 1rem;
     border-width: 1px;
+    border-style: solid; /* Ensure the border has a style */
     border-color: white;
     transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
 }
 
-.navbar-nav .contact-button:hover {
+.navbar-nav #contact-button:hover {
     background-color: rgba(108, 117, 125, 0.7); /* Change transparency on hover */
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;
+    align-items: center;  
+    text-decoration: none;
+    margin-left: 10vw;
+    /* margin-top: .5vh; */
+    /* background-color: red; */
+    margin-right: -5vw;
+}
+
+.navbar a {
+    text-decoration: none; 
+    border: none;           
+}
+
+#admin-icon {
+    font-size: 1.8rem;
+    height: auto;
+    color: white;
+}
+
+#admin-icon:hover {
+    color: rgb(255, 255, 255, 0.7); 
+}
+
+.login-text {
+    margin-top: 0; /* Adds space between the logo and text */
+    font-size: .8rem;  /* Adjust the size of the text */
+    font-weight: lighter;
+    color:white;  /* Text color, you can adjust to match your design */
+}
+
+@media (max-width: 768px) {
+
+.navbar-brand img {
+    /* margin-left: 5vw; */
+    height: 25px;
+    width: 25px;
+}
+
+.brand-text {
+    font-size: 10px; /* Adjust font size */
+}
+
+.container-fluid {
+    /* background-color: red; */
+    margin-left: 5vw;
+    margin-right: 1vw;
+    /* justify-content: space-around; */
+    /* align-items: center; */
+}
+
+.navbar-nav .nav-link {
+    font-size: 10px;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  color: white;
+  background-color: #141414;
+  /* background-color: red; */
+  text-decoration: none;
+  padding: 0.1rem 0.1rem;
+  border-radius: 5%;
+  transition: color 0.5s ease-in-out;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -1px; /* Adjust if needed */
+  border-radius: inherit;
+  background: conic-gradient(white var(--fill), transparent var(--fill));
+  transition: --fill 0.4s ease-in-out;
+}
+
+#contact-button {
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: .5%;
+    border-radius: 20px;
+    border-width: 1px;
+    border-color: white;
+    padding: .1vh 1vw;
+    font-size: .5rem;
+}
+
+.navbar-toggler {
+    background-color: white;
+    border-radius: 1rem;
+    background-color: lightgrey;
+    /* width: 25px;    */
+    /* height: 25px;  */
+}
+
+/* Size the hamburger icon (navbar-toggler-icon) */
+.navbar-toggler-icon {
+    width: 3.5vw;   
+    height: 2vh; 
+    /* position: fixed; */
+    background-color: lightgrey;
+}
+
+.login-container {
+    display: none;
+    flex-direction: column;   
+    /* justify-content: center; */
+    justify-items: flex-end;
+    align-items: center;  
+    text-decoration: none;
+    margin-top: 0vh;
+    /* background-color: red; */
+    margin-right: 0vw;
+}
 }

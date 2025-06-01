@@ -1,17 +1,10 @@
 /* General styles */
-.flex-container {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0px 100px;
-    box-sizing: border-box;
-    width: 100%;
-    overflow: hidden;
-    /* background-color: white; */
-}
 .container-skills {
     display: flex;
     /* background-color: green; */
+    height: 100%;
+    overflow: hidden;
+    padding: 0 7vw;
     justify-content: space-around;
     align-items: center;
 }
@@ -36,7 +29,7 @@ h3 img {
     height: auto;
     max-width: 2.5vw;
     max-height: 3.125vh;
-    margin-right: 5px;
+    margin-right: 0.3vw;
 }
 
 .columns h3 {
@@ -53,27 +46,86 @@ h3 img {
     width: 25vw;
     height: 24vh;
     /* border-bottom: 1px solid #eee; */
-    /* background-color: blue; */
+    background-color: #141414;
     border-radius: 1vw;
+    position: relative;
+    /* overflow: hidden;  */
+}
+
+.columns::before {
+    content: ''; /* Add content */
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    /* background-color: rgb(255, 255, 255);  */
+    filter: blur(20px);
+    z-index: -2;
+    opacity: 0;
+}
+
+.columns::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 1vw;
+    background: conic-gradient(from var(--angle), white, blue, skyblue, black, white);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out; 
+    box-shadow: 0 0 15px 5px rgba(8, 0, 255, 0.15);
+}
+
+.columns:hover::after {
+    opacity: 1; 
+    animation: rotating-glow-border 3.5s linear infinite;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes rotating-glow-border {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+
+@keyframes blur-effect {
+    from {
+        filter: blur(20px);
+    }
+
+    to {
+        filter: blur(19px);
+    }
 }
 
 .slider-container {
     display: flex;
     flex-wrap: wrap;
     /* background-color: purple; */
-    flex-direction: column;
+    /* flex-direction: column; */
+    /* margin-top: 1vh; */
     align-items: center;
     justify-content: center;
     width: 50vw;
-    gap: .1vh; /* gap between two cards */
+    height: 100%;
+    gap: 1vh; 
 }
 
 .slider {
     position: relative;
-    margin-top: 1vh;
+    display: block;
     width: 25vw; /* Full width of the container */
-    height: 45vh;
-    margin-bottom: -4vh;
+    height: 40vh;
+    margin-top: 1.5vh;
+    /* background-color: olive; */
 }
 
 .slider-title {
@@ -83,23 +135,26 @@ h3 img {
 
 .slider-title h4 {
     color: #fff;
+    font-size: 1.3rem;
 }
 .items-container {
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    height: auto;
+    /* height: auto; */
 }
 
 .item {
     flex: 0 0 auto;
-    flex-wrap: wrap;
-    width: 190px;
-    height: 230px;
+    /* flex-wrap: wrap; */
+    width: auto;
+    height: auto;
+    max-width: 170px;
+    max-height: 230px;
     text-align: justify;
     background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 25px;
-    padding: 30px;
+    border-radius: 2rem;
+    padding: 3vh;
     transition: 0.5s;
     position: absolute;
     left: calc(50% - 7vw);
@@ -112,7 +167,7 @@ button {
     color: #fff;
     background-color: transparent;
     border: none;
-    font-size: xxx-large;
+    font-size: xx-large;
     font-family: monospace;
     font-weight: bold;
     cursor: pointer;
@@ -130,7 +185,7 @@ button.next {
 
 h5 {
     text-align: center;
-    font-size: 1rem; /* Base size */
+    font-size: .9rem; /* Base size */
     color: black;
 }
 
@@ -151,7 +206,7 @@ h5 {
     display: block; /* Make the anchor tag a block-level element */
     position: relative; /* Needed for positioning if necessary */
     transition: transform 0.3s ease; /* Smooth transition for the scaling effect */
-    border-radius: 3px; /* Optional: rounded corners for the card */
+    border-radius: 2rem; /* Optional: rounded corners for the card */
     overflow: hidden; /* Ensure children don't overflow */
 }
 
@@ -164,7 +219,7 @@ h5 {
 
 .verification_link h5 {
     margin: 0; /* Remove default margin */
-    padding: 5px; /* Optional: add some padding around the text */
+    padding: .3vw; /* Optional: add some padding around the text */
 }
 
 .certification-icon, .tool-icon {
@@ -172,5 +227,196 @@ h5 {
     height: auto;
     max-width: 2.5vw;
     max-height: 2.5vh;
-    margin-right: 5px;
+    margin-right: .3vw;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+
+.container-skills {
+    display: flex;
+    flex-direction: column;
+    /* background-color: green; */
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 100%;
+    /* overflow: auto; */
+    /* width:fit-content; */
+    /* background-color: red; */
+}
+
+.rows {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    width: 80vw;
+    height: 100%;
+    /* background-color: pink; */
+    /* overflow: auto; */
+    justify-content: center;
+    align-items: center;
+}
+
+.rows h4 {
+    color: #A7A8AA;
+    font-size: .8rem;
+    /* background-color: palevioletred; */
+}
+
+.columns {
+    display: flex;
+    width: 80vw;
+    height: fit-content;
+    /* padding: 0vw; */
+    /* margin: 0; */
+    /* height: 5vh; */
+    /* overflow: auto; */
+    /* border-bottom: 1px solid #eee; */
+    background-color: #141414;
+    border-radius: 2vw;
+}
+
+.columns::after {
+    border-radius: 2vw;
+    background: conic-gradient(from var(--angle), white, blue, skyblue, black, white);
+}
+
+.columns h3 {
+    font-size: .9rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+h3 img {
+    width: auto;
+    height: auto;
+    max-width: 5vw;
+    max-height: 5vh;
+    margin-right: 2vw;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    /* background-color: purple; */
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    height: 100%;
+}
+
+.item {
+    /* width: auto;  */
+    /* height: auto;  */
+    max-width: 100px;
+    max-height: 115px;
+    padding: 1.5vh; /* Optionally reduce padding further */
+    border-radius: 1.2rem; /* Smaller border radius for mobile */
+    /* left: calc(30% - 6vw); */
+}
+
+.slider-title h4 {
+    font-size: .7rem;
+}
+
+h5 {
+    font-size: .5rem; /* Base size */
+}
+
+button {
+    top: 37%;
+    font-size: 1rem;
+}
+
+.slider {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: .5vh;
+    width: 60vw; /* Full width of the container */
+    height: 20vh;
+    /* margin-bottom: -7vh; */
+    /* background-color: yellowgreen; */
+}
+
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 100%;
+    /* overflow: auto; */
+    /* width:fit-content; */
+    /* background-color: red; */
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    /* background-color: purple; */
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    height: 85vh;
+}
+
+.item {
+    /* width: auto;  */
+    /* height: auto;  */
+    max-width: 120px;
+    max-height: 150px;
+    padding: 2.5vh; /* Optionally reduce padding further */
+    border-radius: 1.2rem; /* Smaller border radius for mobile */
+    left: calc(50% - 7vw);
+}
+
+.slider-title h4 {
+    font-size: .85rem;
+}
+
+h5 {
+    font-size: .6rem; /* Base size */
+}
+
+button {
+    top: 42%;
+    font-size: .9rem;
+    margin-right: 2rem;
+    margin-left: -.5rem;
+}
+
+button.prev {
+    left: 5%;
+}
+
+button.next {
+    right: -3%;
+}
+
+.slider {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0vh;
+    width: 20vw; /* Full width of the container */
+    height: 45%;
+    /* margin-bottom: -7vh; */
+    /* background-color: orangered; */
+}
+
 }

@@ -1,0 +1,168 @@
+.work-experience {
+    position: relative;
+    margin: 100px, auto;
+}
+.work {
+    padding: 0.52vw 2.60vw; 
+    position: relative;
+    width: 70%;
+    /* background-color: grey; */
+    justify-content: center;
+    margin: auto auto 0 auto;
+}
+
+.container-work {
+    padding: 0 3vw;
+    position: relative;
+    width: 100%;
+    /* background-color: green; */
+    justify-content: center;
+    margin: auto auto 0 auto;
+}
+
+.experience {
+    padding: 1.04vw 1.04vw;
+    /* background: red; */
+    position: relative;
+    color: white;
+    font-size: 0.8125rem;
+}
+
+.experience .company-timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -.2vh;
+    /* background-color: red; */
+}
+
+.location {
+    font-style: italic;
+}
+
+.experience .role-location {
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+    align-items: center;
+    font-style: italic;
+}
+
+.project-title {
+    font-size: .9rem;
+    margin-bottom: 1.5vh;
+}
+
+.container-work img {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 20px;
+    top:20px;
+    z-index: 1px;
+    /* border: 1px solid white; */
+    /* border-radius: 5px; */
+}
+
+h2 {
+    font-size: 1.0625rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 0.9375rem;
+    color: white;
+    /* font-style: italic; */
+}
+
+.container-education img {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 20px;
+    top:10px;
+    z-index: 1px;
+    /* border: 1px solid white; */
+    /* border-radius: 15px; */
+}
+
+.container-education {
+    padding: 1vh 1.7vw;
+    position: relative;
+    width: 100%;
+    /* background-color: green; */
+    justify-content: center;
+    margin: auto auto 0 auto;
+}
+
+.graduation {
+    padding: 0vw 2.6vw;
+    /* background: red; */
+    position: relative;
+    color: white;
+    font-size: 13px;
+}
+
+.education {
+    padding: 0.52vw 2.6vw;
+    position: relative;
+    width: 70%;
+    /* background-color: rgb(128, 0, 113); */
+    align-items: center;
+    margin: auto auto 0 auto;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    margin-left: 20px;
+}
+
+h6 {
+    color: #A7A8AA;
+}
+
+@media (max-width: 768px) {
+
+.work {
+    padding: 0; 
+    /* position: relative; */
+    width: 100%;
+    /* background-color: grey; */
+    justify-content: center;
+    margin: auto auto 0 auto;
+}
+
+.location, .timeline {
+    display: none;
+}
+
+.container-work {
+    padding: 0 12vw;
+    width: 100%;
+    /* background-color: green; */
+}
+
+.experience {
+    padding: 4vw 4vw;
+    font-size: 0.8125rem;
+}
+
+.container-education {
+    padding: 0 12vw;
+    width: 100%;
+    /* background-color: blueviolet; */
+}
+
+.education {
+    padding: 0vw;
+    position: relative;
+    align-items: center;
+    margin: auto auto 0 auto;
+    padding: 0;
+    width: 100%;
+    /* background-color: rgb(128, 0, 113); */
+}
+
+}
