@@ -1,0 +1,2 @@
+TZ=America/Chicago
+28 7 * * * /portfolio/cleanup.sh

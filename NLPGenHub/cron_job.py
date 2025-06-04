@@ -3,18 +3,15 @@ import os
 import shutil
 from datetime import timedelta
 from django.utils import timezone
-from celery import shared_task
-from langchain_chroma import Chroma
 from .models import ResourceCleanupLog
 
 
-@shared_task
-def cleanup_task(expiration_minutes=1):
-
-    print("\n[INFO] Cleanup process started.")
+def cleanup_task(stdout,style,expiration_minutes=1,):
+    
+    stdout.write(style.WARNING("\n[INFO] Cleanup process started."))
     expiration_time = timezone.now() - timedelta(minutes=expiration_minutes)
     expired_data = QueryData.objects.filter(timestamp__lt=expiration_time)
-    print(f"[INFO] Found {expired_data.count()} expired record(s).")
+    stdout.write(style.WARNING(f"[INFO] Found {expired_data.count()} expired record(s)."))
 
     for data in expired_data:
         if data.query_file and os.path.exists(data.query_file.path):
@@ -27,23 +24,23 @@ def cleanup_task(expiration_minutes=1):
             uploaded_at=uploaded_at,
             session_id=None,
             )
-            print(f"[DEBUG] Deleted file: {file_name}")
+            stdout.write(style.NOTICE(f"[DEBUG] Deleted file: {file_name}"))
             file_name, uploaded_at = None, None
         
         data.delete()                                   # Delete record from DB (path reference)        
     
 
-    print("[INFO] File cleanup completed.")
+    stdout.write(style.SUCCESS("[DONE] File cleanup completed."))
 
-    print("\n[INFO] Starting Chroma DB cleanup.")
+    stdout.write(style.WARNING("\n[INFO] Starting Chroma DB cleanup."))
     try:
         chroma_db_path = 'media/NLP_data/chroma_db'
         if os.path.exists(chroma_db_path):
             shutil.rmtree(chroma_db_path)
-            print(f"[INFO] Chroma DB directory cleared.")
+            stdout.write(style.SUCCESS("[INFO] Chroma DB directory cleared."))
         else:
-            print(f"[WARN] Chroma DB path '{chroma_db_path}' does not exist.")
+            stdout.write(style.WARNING(f"[WARN] Chroma DB path '{chroma_db_path}' does not exist."))
     except Exception as e:
-        print(f"[ERROR] Failed to clear Chroma DB: {e}")
+        stdout.write(style.ERROR(f"[ERROR] Failed to clear Chroma DB: {e}"))
 
-    print("[INFO] Cleanup process completed.\n")
+    stdout.write(style.SUCCESS("[DONE] Cleanup process completed.\n"))

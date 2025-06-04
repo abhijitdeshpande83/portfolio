@@ -1,0 +1,23 @@
+services:
+  django:
+    image: abhijitdeshpande83/portfolio:2.6
+    platform: linux/amd64
+    container_name: django_app
+    command: /start.sh
+    ports:
+      - "127.0.0.1:8000:8000" 
+    env_file:
+      - .env.main
+    environment:
+      - TIKA_CLIENT_ONLY=True
+      - TIKA_SERVER_ENDPOINT=http://tika:9998
+    depends_on:
+      - tika  
+    
+  tika:
+    image: apache/tika
+    platform: linux/amd64
+    container_name: tika_server
+    ports:
+      - "9998:9998"
+

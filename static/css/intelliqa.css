@@ -113,6 +113,15 @@ button{
 
 @media (max-width: 768px) {
 
+.chatbot {
+    background-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    line-height: 1.5;
+    justify-items: center;
+    height: 95vh;
+}
+
 .file-upload {
     display: flex;
     flex-direction: row;
@@ -120,8 +129,8 @@ button{
     /* background-color: green; */
     align-items: center;
     padding: 1px;
-    width: 75vw;
-    gap: 1vw;
+    width: 80vw;
+    gap: 2vw;
 }
 
 .question {
@@ -150,8 +159,8 @@ button{
     width: 10%;
     background-color: transparent;
     color: white;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     text-align: center;
     justify-content: center;
 }
@@ -161,5 +170,6 @@ button{
     width: 25px;
     height: 25px;
 }
+
 
 }

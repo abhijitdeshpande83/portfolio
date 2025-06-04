@@ -1,7 +1,5 @@
 # Ignore Python virtual environments
-venv/
-venv-main/
-env/
+venv*
 __pycache__/
 
 # Python artifacts
