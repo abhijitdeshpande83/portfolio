@@ -1,6 +1,6 @@
 services:
   django:
-    image: abhijitdeshpande83/portfolio:2.6
+    image: abhijitdeshpande83/portfolio:2.7
     platform: linux/amd64
     container_name: django_app
     command: /start.sh

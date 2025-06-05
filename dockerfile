@@ -26,11 +26,12 @@ RUN python manage.py collectstatic --noinput
 
 # Copy and set startup script
 COPY start.sh /start.sh
+COPY cleanup.sh /cleanup.sh
 COPY crontab.txt /etc/cron.d/my-cron-job
 
 # Make scripts executable
 RUN chmod +x /start.sh
-RUN chmod +x /portfolio/cleanup.sh
+RUN chmod +x /cleanup.sh
 
 # Add crontab and apply it
 RUN chmod 0644 /etc/cron.d/my-cron-job
