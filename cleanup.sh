@@ -1,2 +1,3 @@
 #!/bin/bash
-python manage.py run_cleanup
+cd /portfolio
+/usr/local/bin/python manage.py run_cleanup

@@ -61,7 +61,7 @@ button{
     /* background-color: green; */
     align-items: center;
     padding: 2px;
-    width: 20vw;
+    width: 30vw;
     gap: .5vw;
 }
 
@@ -85,11 +85,11 @@ button{
 }
 
 .question button {
-    width: 7%;
+    /* width: 7%; */
     background-color: transparent;
     color: white;
-    width: 45px;
-    height: 45px;
+    width: 3vw;
+    height: 5vh;
     text-align: center;
     justify-content: center;
 }
@@ -156,19 +156,17 @@ button{
 }
 
 .question button {
-    width: 10%;
-    background-color: transparent;
+    /* background-color: red; */
     color: white;
-    width: 40px;
-    height: 40px;
+    width: 6.5vw;
+    height: 4vh;
     text-align: center;
     justify-content: center;
 }
 
-
 .question .btn-btn-img {
-    width: 25px;
-    height: 25px;
+    width: 6vw;
+    height: 4vh;
 }
 
 }

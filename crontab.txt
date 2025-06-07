@@ -1,2 +1,4 @@
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin
 TZ=America/Chicago
 28 7 * * * /portfolio/cleanup.sh
