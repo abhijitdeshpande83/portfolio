@@ -24,10 +24,10 @@ dist/
 
 # System files
 .DS_Store
-.env
+.env*
 *.swp
 
 # Docker files themselves (optional)
-Dockerfile
+dockerfile
 .dockerignore
 

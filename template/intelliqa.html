@@ -20,7 +20,7 @@
     
 </head>
 <body>
-    <div class="chatbot">
+    <div class="chatbot-container">
         <h1>Welcome In!</h1>
 
             <form action="{% url 'test' %}" method="post" enctype="multipart/form-data"> 
@@ -37,7 +37,7 @@
                 <div class="question">
                     <textarea name="question" placeholder="Ask your question here....." rows=1></textarea>
                     <button type="submit">
-                        <img src="{% static 'project_data/send.png' %}" alt="Send" class="back-btn-img">
+                        <img src="{% static 'project_data/send.png' %}" alt="Send" class="btn-btn-img">
                     </button>
                 </div>
             </form>
