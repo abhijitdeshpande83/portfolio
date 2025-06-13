@@ -1,6 +1,7 @@
 services:
   django:
-    image: abhijitdeshpande83/portfolio:2.8
+    image: abhijitdeshpande83/portfolio:3.0
+    restart: unless-stopped
     platform: linux/amd64
     container_name: django_app
     command: /start.sh
@@ -16,6 +17,7 @@ services:
     
   tika:
     image: apache/tika
+    restart: unless-stopped
     platform: linux/amd64
     container_name: tika_server
     ports:
