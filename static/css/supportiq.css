@@ -1,0 +1,9 @@
+h1 {
+    background-color: #008000;
+    text-align: center;
+}
+
+.prompt-input {
+    background-color: grey;
+    justify-items: center;
+}

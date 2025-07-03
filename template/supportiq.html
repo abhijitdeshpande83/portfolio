@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/supportiq.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcom in SupportIQ</h1>
+    <div class="prompt-input">
+        <form action="{% url 'intent-classify-api' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="prompt">
+            <button type="submit">Send</button>
+        </form>
+        <h2>Answer</h2>
+            {{ response.generated_text }}
+    </div>
+</body>
+</html>
