@@ -57,3 +57,12 @@ button:hover {
     border-left: 8px solid #0a66c2;
     border-radius: 8px;
 }
+
+.supportiq-error-container {
+    margin-top: 2rem;
+    background-color: #f1f3f5;
+    padding: .5rem;
+    border-left: 8px solid red;
+    border-radius: 8px;
+    color: red;
+}
