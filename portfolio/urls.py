@@ -17,11 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from mysite import mysite_views
 from NLPGenHub import NLPGenHub_views
+from mysite import mysite_views
+from NLPGenHub import NLPGenHub_views
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',mysite_views.index, name='index'),
     path('',mysite_views.index, name='index'),
     
     # Include the app’s URL patterns

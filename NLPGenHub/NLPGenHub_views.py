@@ -1,10 +1,13 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
-from rag_pipeline.query_engine import load_data, vectorstore, ask_question
+from rag_pipeline import load_data, vectorstore, ask_question
 from .forms import UploadFileForm
 from .models import QueryData
 import hashlib
 import os
+import json
+import requests
+
 
 def get_file_hash(file_obj):
     sha256 = hashlib.sha256()
@@ -43,11 +46,11 @@ def test(request):
             form_data = QueryData.objects.create(query_file=file, file_hash=file_hash)
             form_data.save()
             file_path = 'media/NLP_data/' + os.path.basename(form_data.query_file.name)
+        
+            request.session['file_count'] += 1
+    
             raw_text = load_data(file_path)
             vectorstore_db = vectorstore(persist_directory='media/NLP_data/chroma_db',texts=raw_text)
-                        
-            request.session['file_count'] += 1
-            
             return render(request, "intelliqa.html", {'form':form})
         
         elif query:
@@ -62,3 +65,24 @@ def test(request):
     else:
         form = UploadFileForm()
     return render(request, "intelliqa.html", {'form':form})
+
+
+def intent_classify(request):
+
+    API_URL = 'https://25hvdlk3p0.execute-api.us-east-1.amazonaws.com/prod/intent_classify'
+
+    if request.method=='POST':
+        payload = request.POST.get('prompt')
+        payload = {"input": f"Classify the intent: {payload}"}
+        headers = {"Content-Type": "application/json"}
+
+        response = requests.post(API_URL,json=payload,headers=headers)
+        response_data = json.loads(response.text)
+
+        if response.status_code == 200:
+            return render(request, "supportiq.html", {"response":response_data})
+        else:
+            return JsonResponse({'API_ERROR': "Error"}, response.status_code)
+
+    return render(request, "supportiq.html")
+        
