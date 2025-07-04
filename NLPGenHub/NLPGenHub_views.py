@@ -72,17 +72,21 @@ def intent_classify(request):
     API_URL = 'https://25hvdlk3p0.execute-api.us-east-1.amazonaws.com/prod/intent_classify'
 
     if request.method=='POST':
-        payload = request.POST.get('prompt')
-        payload = {"input": f"Classify the intent: {payload}"}
+        prompt = request.POST.get('prompt')
+        payload = {"input": f"Classify the intent: {prompt}"}
         headers = {"Content-Type": "application/json"}
 
-        response = requests.post(API_URL,json=payload,headers=headers)
-        response_data = json.loads(response.text)
 
-        if response.status_code == 200:
+        try:
+            response = requests.post(API_URL,json=payload,headers=headers)
+            response_data = json.loads(response.text)
             return render(request, "supportiq.html", {"response":response_data})
-        else:
-            return JsonResponse({'API_ERROR': "Error"}, response.status_code)
+        
+        except requests.exceptions.HTTPError as e:
+            return render(request, "supportiq.html", {"error":f"API Error: {str(e)}"})
+        
+        except Exception as e:
+            return render(request, "supportiq.html", {"error": f"Unexcepted Error: {str(e)}"})
 
     return render(request, "supportiq.html")
         

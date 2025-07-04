@@ -27,6 +27,12 @@
             <input type="text" name="prompt" placeholder="Enter your question..">
             <button type="submit">Send</button>
         </form>
+        {% if error %}
+        <div class="supportiq-error-container">
+            <h2>Error</h2>
+            {{ error }}
+        </div>
+        {% endif %}
         {% if response %}
         <div class="supportiq-response-container">
             <h2>Response</h2>
