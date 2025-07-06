@@ -73,14 +73,28 @@ def intent_classify(request):
 
     if request.method=='POST':
         prompt = request.POST.get('prompt')
-        payload = {"input": f"Classify the intent: {prompt}"}
+        payload = {"input": prompt}
         headers = {"Content-Type": "application/json"}
-
+        confidence_score = {
+            "very high": {"color": "lightgreen"},
+            "high": {"color":"greenyellow"},
+            "medium": {"color": "orange"},
+            "low": {"color": "#ff9191"}
+            }
 
         try:
             response = requests.post(API_URL,json=payload,headers=headers)
-            response_data = json.loads(response.text)
-            return render(request, "supportiq.html", {"response":response_data})
+            response_data = response.json()
+
+            if response_data["score"] > 0.7:
+                context = {"response": response_data, "color_pattern": confidence_score["very high"]}
+            elif response_data["score"] <=0.7 and response_data["score"] >= 0.6:
+                context = {"response": response_data, "color_pattern": confidence_score["high"]}
+            elif response_data["score"] <0.6 and response_data["score"] >= 0.4:
+                context = {"response": response_data, "color_pattern": confidence_score["medium"]}
+            else:
+                context = {"response": response_data, "color_pattern": confidence_score["low"]}
+            return render(request, "supportiq.html", context)
         
         except requests.exceptions.HTTPError as e:
             return render(request, "supportiq.html", {"error":f"API Error: {str(e)}"})
@@ -89,4 +103,3 @@ def intent_classify(request):
             return render(request, "supportiq.html", {"error": f"Unexcepted Error: {str(e)}"})
 
     return render(request, "supportiq.html")
-        
