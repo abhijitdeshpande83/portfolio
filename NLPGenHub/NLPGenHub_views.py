@@ -82,22 +82,31 @@ def intent_classify(request):
             "medium": {"color": "orange"},
             "low": {"color": "#ff9191"}
             }
-
+        exclude_labels = set(['location','insurance','account','food','fun',
+                              'qa','status','cancel','order','alarm'])
         try:
             response = requests.post(INTENT_API_URL,json=payload,headers=headers)
             response_data = response.json()
-            domain = response_data['label']
-            input_data = {"input": "[Domain {domain}] User: {prompt}"}
-            text_generation = requests.post(TEXT_GEN_API_URL, json=input_data, headers=headers)
-
-            if response_data["score"] > 0.7:
-                context = {"response": response_data, "color_pattern": confidence_score["very high"], "text": text_generation.json()}
-            elif response_data["score"] <=0.7 and response_data["score"] >= 0.6:
-                context = {"response": response_data, "color_pattern": confidence_score["high"], "text": text_generation.json()}
-            elif response_data["score"] <0.6 and response_data["score"] >= 0.4:
-                context = {"response": response_data, "color_pattern": confidence_score["medium"], "text": text_generation.json()}
+            domain = response_data['label'][0]
+            input_data = {"input": f"[Domain {domain}] User: {prompt}"}
+            print(input_data)
+            
+            if domain not in exclude_labels:
+                text_generation = requests.post(TEXT_GEN_API_URL, json=input_data, headers=headers).json()
             else:
-                context = {"response": response_data, "color_pattern": confidence_score["low"], "text": text_generation.json()}
+                text_generation = f"That’s a great question, but I’m not yet trained to handle \
+                                    topics like ‘{domain}’.\
+                                     I’m constantly learning, feel free to ask something else!"
+
+                
+            if response_data["score"] > 0.7:
+                context = {"response": response_data, "color_pattern": confidence_score["very high"], "text": text_generation}
+            elif response_data["score"] <=0.7 and response_data["score"] >= 0.6:
+                context = {"response": response_data, "color_pattern": confidence_score["high"], "text": text_generation}
+            elif response_data["score"] <0.6 and response_data["score"] >= 0.4:
+                context = {"response": response_data, "color_pattern": confidence_score["medium"], "text": text_generation}
+            else:
+                context = {"response": response_data, "color_pattern": confidence_score["low"], "text": text_generation}
             return render(request, "supportiq.html", context)
         
         except requests.exceptions.HTTPError as e:
