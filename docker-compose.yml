@@ -1,6 +1,6 @@
 services:
   django:
-    image: abhijitdeshpande83/portfolio:3.0
+    image: ${DOCKER_REPO_NAME}:${TAG}
     restart: unless-stopped
     platform: linux/amd64
     container_name: django_app

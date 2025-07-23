@@ -69,7 +69,8 @@ def test(request):
 
 def intent_classify(request):
 
-    API_URL = 'https://25hvdlk3p0.execute-api.us-east-1.amazonaws.com/prod/intent_classify'
+    INTENT_API_URL = 'https://25hvdlk3p0.execute-api.us-east-1.amazonaws.com/prod/intent_classify'
+    TEXT_GEN_API_URL = 'https://gj9hjn4x39.execute-api.us-east-1.amazonaws.com/prod/text-generation'
 
     if request.method=='POST':
         prompt = request.POST.get('prompt')
@@ -83,17 +84,20 @@ def intent_classify(request):
             }
 
         try:
-            response = requests.post(API_URL,json=payload,headers=headers)
+            response = requests.post(INTENT_API_URL,json=payload,headers=headers)
             response_data = response.json()
+            domain = response_data['label']
+            input_data = {"input": "[Domain {domain}] User: {prompt}"}
+            text_generation = requests.post(TEXT_GEN_API_URL, json=input_data, headers=headers)
 
             if response_data["score"] > 0.7:
-                context = {"response": response_data, "color_pattern": confidence_score["very high"]}
+                context = {"response": response_data, "color_pattern": confidence_score["very high"], "text": text_generation.json()}
             elif response_data["score"] <=0.7 and response_data["score"] >= 0.6:
-                context = {"response": response_data, "color_pattern": confidence_score["high"]}
+                context = {"response": response_data, "color_pattern": confidence_score["high"], "text": text_generation.json()}
             elif response_data["score"] <0.6 and response_data["score"] >= 0.4:
-                context = {"response": response_data, "color_pattern": confidence_score["medium"]}
+                context = {"response": response_data, "color_pattern": confidence_score["medium"], "text": text_generation.json()}
             else:
-                context = {"response": response_data, "color_pattern": confidence_score["low"]}
+                context = {"response": response_data, "color_pattern": confidence_score["low"], "text": text_generation.json()}
             return render(request, "supportiq.html", context)
         
         except requests.exceptions.HTTPError as e:
@@ -103,3 +107,7 @@ def intent_classify(request):
             return render(request, "supportiq.html", {"error": f"Unexcepted Error: {str(e)}"})
 
     return render(request, "supportiq.html")
+
+
+    
+
