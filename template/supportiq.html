@@ -36,10 +36,11 @@
         {% if response %}
         <div class="supportiq-response-container">
             <h2>Response</h2>
-            <p>Intent: {{ response.label }}</p>
+            <p>Intent: {{ response.label.0 }}</p>
             <div class="confidence-score" style="background-color: {{ color_pattern.color }};">
                <p>Confidence: {{ response.score|floatformat:2 }}%</p>
             </div>
+            <p>{{ text }}</p>
         {% endif %}    
     </div>  
 </body>
