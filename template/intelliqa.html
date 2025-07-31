@@ -23,7 +23,7 @@
     <div class="chatbot-container">
         <h1>Welcome In!</h1>
 
-            <form action="{% url 'test' %}" method="post" enctype="multipart/form-data"> 
+            <form action="{% url 'rag_intelliqa' %}" method="post" enctype="multipart/form-data"> 
                 {% csrf_token %}
                 <div class="file-upload">
                         {{ form.query_file }}   
