@@ -16,7 +16,7 @@ def get_file_hash(file_obj):
 
     return sha256.hexdigest()
 
-def test(request):
+def rag_intelliqa(request):
 
     if not request.session.session_key:
         request.session.create()
@@ -87,7 +87,7 @@ def intent_classify(request):
         try:
             response = requests.post(INTENT_API_URL,json=payload,headers=headers)
             response_data = response.json()
-            domain = response_data['label'][0]
+            domain = response_data['label']
             input_data = {"input": f"[Domain {domain}] User: {prompt}"}
             print(input_data)
             
