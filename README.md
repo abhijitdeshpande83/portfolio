@@ -29,7 +29,8 @@ This is a personal portfolio website built to showcase my skills, projects, and 
 
 ## 🏗️ Architecture Diagram
 
-![Architecture Diagram](Documentation/Portfolio_HLD_v2.png)
+![Architecture Diagram](docs/Portfolio_HLD_v3.png)
+[View interactive diagram](https://abhijitdeshpande83.github.io/portfolio/Portfolio_HLD_v3.drawio.html)
 
 ## 🚀 Clone the Repository
 
