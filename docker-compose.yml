@@ -1,6 +1,6 @@
 services:
   django:
-    image: ${DOCKER_REPO_NAME}:${TAG}
+    image: ${DOCKER_USER}/${DOCKER_IMG1}:${TAG1}
     restart: unless-stopped
     platform: linux/amd64
     container_name: django_app
@@ -22,4 +22,20 @@ services:
     container_name: tika_server
     ports:
       - "9998:9998"
+
+  rasa:
+    image: ${DOCKER_USER}/${DOCKER_IMG2}:${TAG2} 
+    container_name: rasa_server
+    ports:
+      - "5005:5005"
+    depends_on:
+      - actions
+    
+  actions:
+    image: ${DOCKER_USER}/${DOCKER_IMG1}:${TAG1}
+    container_name: rasa_actions
+    ports:
+      - "5055:5055"
+    env_file:
+      - .env.main
 
