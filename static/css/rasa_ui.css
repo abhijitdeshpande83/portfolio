@@ -1,5 +1,5 @@
 body {
-    background: url("static/project_data/cinematography.jpg") no-repeat center center fixed;
+    background: url("/static/project_data/cinematography.jpg") no-repeat center center fixed;
     background-size: cover;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     max-width: 900px; 
