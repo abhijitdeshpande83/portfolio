@@ -32,7 +32,7 @@ services:
       - actions
     
   actions:
-    image: ${DOCKER_USER}/${DOCKER_IMG1}:${TAG1}
+    image: ${DOCKER_USER}/${DOCKER_IMG3}:${TAG3}
     container_name: rasa_actions
     ports:
       - "5055:5055"

@@ -8,7 +8,6 @@ import os
 import json
 import requests
 
-
 def get_file_hash(file_obj):
     sha256 = hashlib.sha256()
     for chunk in file_obj.chunks():
@@ -93,12 +92,12 @@ def intent_classify(request):
             
             if domain not in exclude_labels:
                 text_generation = requests.post(TEXT_GEN_API_URL, json=input_data, headers=headers).json()
+            
             else:
-                text_generation = f"That’s a great question, but I’m not yet trained to handle \
-                                    topics like ‘{domain}’.\
-                                     I’m constantly learning, feel free to ask something else!"
+                text_generation = f"That's a great question, but I'm not yet trained to handle \
+                                    topics like '{domain}'.\
+                                     I'm constantly learning, feel free to ask something else!"
 
-                
             if response_data["score"] > 0.7:
                 context = {"response": response_data, "color_pattern": confidence_score["very high"], "text": text_generation}
             elif response_data["score"] <=0.7 and response_data["score"] >= 0.6:
@@ -117,6 +116,6 @@ def intent_classify(request):
 
     return render(request, "supportiq.html")
 
+def rasa(request):
 
-    
-
+    return render(request, "rasa_ui.html")
