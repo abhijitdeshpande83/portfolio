@@ -32,7 +32,7 @@
       chatBox.scrollTop = chatBox.scrollHeight;
 
       // Send to Rasa REST webhook
-      const res = await fetch("http://localhost:5005/webhooks/rest/webhook", {
+      const res = await fetch("https://analyticnerds.com/rasa/webhooks/rest/webhook", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sender: "user1", message: message })
@@ -44,7 +44,7 @@
           chatBox.innerHTML += `<div class="bot">Bot: ${r.text}<br></div>`;
         }
         if (r.image) {
-        chatBox.innerHTML += `<div><img src="${r.image}" alt="image" style="width:80%; height:75%;"/></div>`;
+        chatBox.innerHTML += `<div><img src="${r.image}" alt="image" style="width:80%; height:95%;"/></div>`;
         }
       });
 

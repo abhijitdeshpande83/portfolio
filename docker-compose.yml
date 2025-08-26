@@ -6,7 +6,7 @@ services:
     container_name: django_app
     command: /start.sh
     ports:
-      - "127.0.0.1:8000:8000" 
+      - "8000:8000" 
     env_file:
       - .env.main
     environment:
@@ -25,7 +25,10 @@ services:
 
   rasa:
     image: ${DOCKER_USER}/${DOCKER_IMG2}:${TAG2} 
+    restart: unless-stopped
     container_name: rasa_server
+    volumes:
+      - ./models:/app/models
     ports:
       - "5005:5005"
     depends_on:
@@ -33,6 +36,7 @@ services:
     
   actions:
     image: ${DOCKER_USER}/${DOCKER_IMG3}:${TAG3}
+    restart: unless-stopped
     container_name: rasa_actions
     ports:
       - "5055:5055"

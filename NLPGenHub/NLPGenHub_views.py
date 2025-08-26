@@ -1,6 +1,8 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
+from django.template.loader import get_template
 from rag_pipeline import load_data, vectorstore, ask_question
+from django.views.decorators.csrf import csrf_exempt
 from .forms import UploadFileForm
 from .models import QueryData
 import hashlib
@@ -119,3 +121,11 @@ def intent_classify(request):
 def rasa(request):
 
     return render(request, "rasa_ui.html")
+
+@csrf_exempt
+def booking_confirmation(request):
+    if request.method=="POST":
+        html_template = get_template("booking_confirmation.html")
+        html_content = html_template.template.source
+        return HttpResponse(html_content, content_type="text/html; charset=utf-8")
+    return HttpResponse("Invalid method", status=405)
