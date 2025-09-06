@@ -59,7 +59,7 @@
 .name {
     font-size: 3vw;
     font-weight: bold;
-    color: rgba(96,165,250,255);
+    color: #FF6600;
 }
 
 .buttons button {
@@ -67,14 +67,14 @@
     margin-top: 2vh;
     padding: 1.2vh .5vw;
     font-size: .9rem;
-    background-color: #1E90FF;
+    background-color: #FF6600;
     border-radius: 1rem;
     transition: background-color 0.3s ease;
 }
 
 .buttons button:hover {
     background-color: white;
-    color: #1E90FF;
+    color: #FF6600;
 }
 
 @media (max-width: 768px) {
@@ -122,7 +122,7 @@
     margin-top: 1.2vh;
     padding: .4vh .7vw;
     font-size: .8rem;
-    background-color: #1E90FF;
+    background-color: #FF6600;
     border-radius: .5rem;
 }
 

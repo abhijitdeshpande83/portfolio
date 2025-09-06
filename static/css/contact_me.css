@@ -62,7 +62,7 @@
   /* aspect-ratio: 1; */
   font-size: 1.8rem;
   color: #141414;
-  background-color: #1E90FF;
+  background-color: #FF6600;
   border-radius: 35%;
   transition: color 0.5s ease-in-out;
   text-decoration: none; /* remove the underline */
@@ -130,7 +130,7 @@
     position: relative; /* Position the button absolutely within the container */
     bottom: -1vw; /* Distance from the bottom of the container */
     left: auto;
-    background-color: #1E90FF;
+    background-color: #FF6600;
     color: white;
     border: none;
     border-radius: 4px;
@@ -139,6 +139,12 @@
     padding: 6px 8px; /* Adjust padding to make the button smaller */
     transition: background-color 0.3s ease;
     box-sizing: border-box; 
+}
+
+.submit-button:hover {
+    background-color: whitesmoke;
+    color: #FF6600;
+    transition: .3s;
 }
 
 @media (max-width: 768px) {
@@ -204,7 +210,7 @@
   height: 12vw;
   font-size: 1.5rem;
   color: #141414;
-  background-color: #1E90FF;
+  background-color: #FF6600;
   border-radius: 35%;
   transition: color 0.5s ease-in-out;
   text-decoration: none; 
