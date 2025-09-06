@@ -4,7 +4,7 @@ function initializeSlider(sliderId) {
     let next = document.getElementById(`next-${sliderId}`);
     let prev = document.getElementById(`prev-${sliderId}`);
     
-    let active = 0;
+    let active = 2;
 
     function loadShow() {
         let stt = 0;
