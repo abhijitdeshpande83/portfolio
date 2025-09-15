@@ -2,6 +2,10 @@
 venv*
 __pycache__/
 
+# Ignore the 'docs' & 'static' directory and all its contents
+static/
+docs/
+
 # Python artifacts
 *.pyc
 *.pyo
@@ -27,7 +31,9 @@ dist/
 .env*
 *.swp
 
-# Docker files themselves (optional)
+# Docker files themselves
 dockerfile
 .dockerignore
+README.md
+docker-compose.yml
 
